@@ -1,2 +1,2 @@
 # dotfiles
-Configuration files for my 'BTW I use Arch' setup
+Configuration files for my ***BTW I use Arch*** setup.
