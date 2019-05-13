@@ -1,0 +1,205 @@
+[colors]
+; Colors from Rally Concept Material Design
+background = #21252B
+foreground = #FFFFFF
+background-alt = #fff
+foreground-alt = #FFFFFF
+red = #F44336
+green = #1EB980
+dark-green = #045D56
+yellow = #FFAC12
+gray = #ADADB1
+
+;----------------------------------------------------------
+
+[paddings]
+inner = 1
+outer = 5
+
+;----------------------------------------------------------
+
+[bar/main]
+dpi = 192
+height = 54
+fixed-center = true
+radius = 10
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 15
+border-color = #00000000
+
+font-0 = Roboto:weight=regular:pixelsize=10;5
+font-1 = Material Icons:size=15;10
+font-2 = NotoEmoji Nerd Font:size=15;7
+
+modules-left = i3
+modules-center =
+modules-right = volume wlan eth updates time date battery power
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+tray-position = center
+tray-maxsize = 32
+tray-background = ${colors.background}
+tray-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/i3]
+type = internal/i3
+format = <label-state><label-mode>
+label-font = 2
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+
+pin-workspaces = true
+
+label-mode-padding = ${paddings.outer}
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.yellow}
+
+label-focused = %icon%
+label-focused-background = ${colors.dark-green}
+label-focused-foreground = ${colors.foreground}
+label-focused-padding = ${paddings.outer}
+
+label-unfocused-background = ${colors.background}
+label-unfocused = %icon%
+label-unfocused-padding = ${paddings.outer}
+
+label-urgent = %icon%
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume><bar-volume>
+
+label-volume = ""
+label-volume-foreground = ${colors.foreground}
+label-volume-font = 3
+
+label-muted = 
+label-muted-foreground = ${colors.gray}
+
+bar-volume-width = 15
+bar-volume-foreground-0 = ${colors.dark-green}
+bar-volume-foreground-1 = ${colors.dark-green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
+
+bar-volume-gradient = true
+bar-volume-indicator =
+bar-volume-fill = ""
+bar-volume-empty = ""
+bar-volume-empty-foreground = ${colors.gray}
+
+;----------------------------------------------------------
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 1
+
+label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}
+format-connected-padding = ${paddings.outer}
+
+label-disconnected = %{A1:networkmanager_dmenu:}%{A}
+label-disconnected-foreground = ${colors.gray}
+format-disconnected-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/eth]
+type = internal/network
+interface = ens20u1u4
+interval = 1
+
+label-connected =  %local_ip%
+label-connected-padding-right = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/updates]
+type = custom/script
+exec = ~/dot/polybar/scripts/updates-arch-combined.sh
+interval = 1
+
+;----------------------------------------------------------
+
+[module/time]
+type = internal/date
+
+interval = 1
+time = %H:%M:%S
+
+label =   %time%
+format-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/date]
+type = internal/date
+
+interval = 1
+date = "%d/%m/%Y"
+
+label =   %date%
+
+;----------------------------------------------------------
+
+[module/battery]
+type = custom/script
+exec = ~/dot/polybar/scripts/battery-combined-udev.sh
+tail = true
+format-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/power]
+type = custom/menu
+
+format = <label-toggle><menu>
+expand-right = true
+
+format-spacing = 0
+
+label-open = ""
+label-open-background = ${colors.dark-green}
+label-open-foreground = ${colors.foreground}
+label-open-padding = ${paddings.outer}
+
+label-close = 
+label-close-background = ${colors.dark-green}
+label-close-foreground = ${colors.foreground}
+label-close-padding = ${paddings.outer}
+
+menu-0-0 = 
+menu-0-0-exec = reboot
+menu-0-0-background = ${colors.dark-green}
+menu-0-0-padding = ${paddings.inner}
+
+menu-0-1 = 
+menu-0-1-exec = poweroff
+menu-0-1-background = ${colors.dark-green}
+menu-0-1-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[settings]
+screenchange-reload = true
