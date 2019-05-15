@@ -72,7 +72,7 @@ battery_print() {
     fi
 }
 
-path_pid="/home/mattia/dot/polybar/battery-combined-udev.pid"
+path_pid="/home/mattia/dot/polybar/scripts/battery-combined-udev.pid"
 
 case "$1" in
     --update)
