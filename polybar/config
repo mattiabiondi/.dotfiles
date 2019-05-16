@@ -138,7 +138,7 @@ label-connected-padding-right = ${paddings.outer}
 [module/updates]
 type = custom/script
 exec = ~/dot/polybar/scripts/updates-arch-combined.sh
-interval = 1
+interval = 600
 
 ;----------------------------------------------------------
 
