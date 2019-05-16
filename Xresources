@@ -6,8 +6,8 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #d8d8d8
-XTerm*foreground:        #222D31
+XTerm*background:        #FFFFFF
+XTerm*foreground:        #222222
 XTerm*pointerColor:      #1ABB9B
 XTerm*faceName:          Fixed
 XTerm*faceSize:          11
@@ -18,44 +18,45 @@ st.alpha: 0.92
 st.font: Monospace-10;
 st.termname: st-256color
 
-*background:                      #222D31
-*foreground:                      #d8d8d8
 *fading:                          8
 *fadeColor:                       black
 *cursorColor:                     #1ABB9B
 *pointerColorBackground:          #2B2C2B
 *pointerColorForeground:          #16A085
 
-!! black dark/light
-*color0:                          #222D31
-*color8:                          #585858
+! special
+*.foreground:   #FFFFFF
+*.background:   #222222
+*.cursorColor:  #c5c8c6
 
-!! red dark/light
-*color1:                          #ab4642
-*color9:                          #ab4642
+! black
+*.color0:       #191919
+*.color8:       #252525
 
-!! green dark/light
-*color2:                          #7E807E
-*color10:                         #8D8F8D
+! red
+*.color1:       #ff6859
+*.color9:       #ff857c
 
-!! yellow dark/light
-*color3:                          #f7ca88
-*color11:                         #f7ca88
+! green
+*.color2:       #007d51
+*.color10:      #1eb980
 
-!! blue dark/light
-*color4:                          #7cafc2
-*color12:                         #7cafc2
+! yellow
+*.color3:       #ffac12
+*.color11:      #ffcf44
 
-!! magenta dark/light
-*color5:                          #ba8baf
-*color13:                         #ba8baf
+! blue
+*.color4:       #0082fb
+*.color12:      #72deff
 
-!! cyan dark/light
-*color6:                          #1ABB9B
-*color14:                         #1ABB9B
+! magenta
+*.color5:       #a932ff
+*.color13:      #b15dff
 
-!! white dark/light
-*color7:                          #d8d8d8
-*color15:                         #f8f8f8
+! cyan
+*.color6:       #00aea4
+*.color14:      #56d1ca
 
-Xcursor.theme: xcursor-breeze
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
