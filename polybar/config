@@ -9,6 +9,7 @@ green = #1EB980
 dark-green = #045D56
 yellow = #FFAC12
 gray = #ADADB1
+blue = #0082FB
 
 ;----------------------------------------------------------
 
@@ -27,8 +28,10 @@ radius = 10
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 15
-border-color = #00000000
+border-top-size = 15
+border-left-size = 15
+border-right-size = 15
+;border-color = #00000000
 
 font-0 = Roboto:weight=regular:pixelsize=10;5
 font-1 = Material Icons:size=15;10
@@ -36,7 +39,7 @@ font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = backlight volume wlan eth updates time date battery power
+modules-right = volume backlight wlan eth updates time date battery power
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -64,7 +67,7 @@ pin-workspaces = true
 
 label-mode-padding = ${paddings.outer}
 label-mode-foreground = ${colors.background}
-label-mode-background = ${colors.yellow}
+label-mode-background = ${colors.blue}
 
 label-focused = %icon%
 label-focused-background = ${colors.dark-green}
@@ -90,9 +93,11 @@ format-volume = <label-volume><bar-volume>
 label-volume = ""
 label-volume-foreground = ${colors.foreground}
 label-volume-font = 3
+label-volume-padding = ${paddings.outer}
 
 label-muted = 
 label-muted-foreground = ${colors.gray}
+label-muted-padding = ${paddings.outer}
 
 bar-volume-width = 15
 bar-volume-foreground-0 = ${colors.dark-green}
@@ -148,7 +153,7 @@ type = internal/date
 interval = 1
 time = %H:%M:%S
 
-label =   %time%
+label =  %time%
 format-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
@@ -159,7 +164,7 @@ type = internal/date
 interval = 1
 date = "%d/%m/%Y"
 
-label =   %date%
+label =  %date%
 
 ;----------------------------------------------------------
 
@@ -207,9 +212,10 @@ card = intel_backlight
 
 format =  <label>
 label = %percentage%%
-format-padding = ${paddings.outer}
+;format-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
 
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
