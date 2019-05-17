@@ -1,4 +1,4 @@
-rofi.theme: ~/.config/rofi/Manjaro.rasi
+rofi.theme: ~/.config/rofi/theme.rasi
 rofi.modi: combi
 rofi.dpi: 192
 rofi.font: Roboto 10
