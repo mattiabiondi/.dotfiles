@@ -66,8 +66,8 @@ ws-icon-5 = 6;
 pin-workspaces = true
 
 label-mode-padding = ${paddings.outer}
-label-mode-foreground = ${colors.background}
-label-mode-background = ${colors.blue}
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.dark-green}
 
 label-focused = %icon%
 label-focused-background = ${colors.dark-green}
@@ -93,11 +93,9 @@ format-volume = <label-volume><bar-volume>
 label-volume = ""
 label-volume-foreground = ${colors.foreground}
 label-volume-font = 3
-label-volume-padding = ${paddings.outer}
 
 label-muted = 
 label-muted-foreground = ${colors.gray}
-label-muted-padding = ${paddings.outer}
 
 bar-volume-width = 15
 bar-volume-foreground-0 = ${colors.dark-green}
@@ -210,9 +208,8 @@ menu-0-1-padding = ${paddings.outer}
 type = internal/backlight
 card = intel_backlight
 
-format =  <label>
-label = %percentage%%
-;format-padding = ${paddings.outer}
+label =  %percentage%%
+label-padding-left = ${paddings.outer}
 
 ;----------------------------------------------------------
 
