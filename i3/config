@@ -254,6 +254,4 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock and suspend
-exec_always --no-startup-id xidlehook --time 5 --timer 'betterlockscreen -l dimblur' --notify 30 --notifier 'notify-send -t 5000 -a System -u normal " " "The screen will lock in 30 seconds"' --not-when-fullscreen --not-when-audio
-exec_always --no-startup-id xss-lock -- 'betterlockscreen -l dimblur' &
-exec_always --no-startup-id xautolock -killtime 60 -killer "sleep 1 && systemctl suspend" &
+bindsym $mod+shift+x exec betterlockscreen -l dimblur
