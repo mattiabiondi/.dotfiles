@@ -39,7 +39,7 @@ font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = volume backlight wlan eth updates time date battery power
+modules-right = alsa backlight wlan eth updates time date battery power
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -85,32 +85,31 @@ label-urgent-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
-format-volume = <label-volume><bar-volume>
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
 
-label-volume = ""
-label-volume-foreground = ${colors.foreground}
-label-volume-font = 3
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+
+headphone-id = 21
+
+mapped = true
 
 label-muted = 
 label-muted-foreground = ${colors.gray}
 
-bar-volume-width = 15
-bar-volume-foreground-0 = ${colors.dark-green}
-bar-volume-foreground-1 = ${colors.dark-green}
-bar-volume-foreground-2 = ${colors.green}
-bar-volume-foreground-3 = ${colors.green}
-bar-volume-foreground-4 = ${colors.green}
-bar-volume-foreground-5 = ${colors.yellow}
-bar-volume-foreground-6 = ${colors.red}
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
-bar-volume-gradient = true
-bar-volume-indicator =
-bar-volume-fill = ""
-bar-volume-empty = ""
-bar-volume-empty-foreground = ${colors.gray}
+ramp-headphones-0 = 
 
 ;----------------------------------------------------------
 
