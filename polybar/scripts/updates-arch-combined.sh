@@ -10,8 +10,10 @@ fi
 
 updates=$(("$updates_arch" + "$updates_aur"))
 
+RED='\033[0;31m'
+
 if [ "$updates" -gt 0 ]; then
     echo " $updates"
 else
-    echo " $updates"
+    echo " $updates"
 fi
