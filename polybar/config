@@ -23,7 +23,7 @@ outer = 5
 dpi = 192
 height = 54
 fixed-center = true
-radius = 10
+;radius = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -207,8 +207,16 @@ menu-0-1-padding = ${paddings.outer}
 type = internal/backlight
 card = intel_backlight
 
-label =  %percentage%%
-label-padding-left = ${paddings.outer}
+format = <ramp> <label>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-padding-left = ${paddings.outer}
 
 ;----------------------------------------------------------
 
