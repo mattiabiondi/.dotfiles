@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #045D56 #285577 #ffffff #2e9ef4   #045D56
+client.focused          #045D56 #285577 #ffffff #045D56   #045D56
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #F44336 #ffffff #F44336   #F44336
@@ -256,6 +256,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Autostart applications
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id libinput-gestures
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock and suspend
