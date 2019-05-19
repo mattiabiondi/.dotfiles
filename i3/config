@@ -242,6 +242,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id megasync
+exec --no-startup-id dropbox
 exec --no-startup-id libinput-gestures
 exec --no-startup-id ntpd -qg &
 exec --no-startup-id setxkbmap -option compose:rctrl -option lv3:ralt_switch -option eurosign:5 -option rupeesign:4
