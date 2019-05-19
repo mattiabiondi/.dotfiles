@@ -181,25 +181,40 @@ expand-right = true
 
 format-spacing = 0
 
-label-open = ""
+label-open = 
 label-open-background = ${colors.dark-green}
 label-open-foreground = ${colors.foreground}
 label-open-padding = ${paddings.outer}
 
-label-close = 
+label-close = 
 label-close-background = ${colors.dark-green}
 label-close-foreground = ${colors.foreground}
-label-close-padding = ${paddings.outer}
+label-close-padding-left = ${paddings.outer}
 
-menu-0-0 = 
-menu-0-0-exec = reboot
+menu-0-0 = 
+menu-0-0-exec = betterlockscreen -l dimblur
 menu-0-0-background = ${colors.dark-green}
-menu-0-0-padding = ${paddings.inner}
+menu-0-0-padding-left = ${paddings.outer}
 
-menu-0-1 = 
-menu-0-1-exec = poweroff
+menu-0-1 = 
+menu-0-1-exec = i3-msg exit
 menu-0-1-background = ${colors.dark-green}
-menu-0-1-padding = ${paddings.outer}
+menu-0-1-padding-left = ${paddings.outer}
+
+menu-0-2 = 
+menu-0-2-exec = systemctl suspend
+menu-0-2-background = ${colors.dark-green}
+menu-0-2-padding-left = ${paddings.outer}
+
+menu-0-3 = 
+menu-0-3-exec = reboot
+menu-0-3-background = ${colors.dark-green}
+menu-0-3-padding-left = ${paddings.outer}
+
+menu-0-4 = 
+menu-0-4-exec = poweroff
+menu-0-4-background = ${colors.dark-green}
+menu-0-4-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
 
