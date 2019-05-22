@@ -331,8 +331,7 @@ ramp-volume-2 = 
 ramp-headphones-0 = 
 
 format-volume-background = ${colors.background-5}
-format-volume-padding-right = ${paddings.outer}
-format-volume-padding-left = ${paddings.inner}
+format-volume-padding = ${paddings.outer}
 label-muted-background = ${colors.background-5}
 label-muted-padding = ${paddings.outer}
 
