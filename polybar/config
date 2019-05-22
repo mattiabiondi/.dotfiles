@@ -1,9 +1,13 @@
 [colors]
-; Colors from Rally Concept Material Design
-background = #222222
+background-1 = #222222
+background-2 = #2D2D2D
+background-3 = #383838
+background-4 = #434343
+background-5 = #4E4E4E
+background-6 = #222222
+
 foreground = #FFFFFF
-background-alt = #fff
-foreground-alt = #FFFFFF
+
 red = #F44336
 green = #1EB980
 dark-green = #045D56
@@ -14,47 +18,86 @@ blue = #0082FB
 ;----------------------------------------------------------
 
 [paddings]
-inner = 1
+inner = 2.5
 outer = 5
 
 ;----------------------------------------------------------
 
 [bar/main]
+monitor = eDP1
 dpi = 192
 height = 54
 fixed-center = true
-;radius = 10
 
-background = ${colors.background}
+background = #00000000
 foreground = ${colors.foreground}
 
 border-top-size = 15
 border-left-size = 15
 border-right-size = 15
-;border-color = #00000000
 
-font-0 = Roboto:weight=regular:pixelsize=10;5
+font-0 = Roboto:weight=regular:size=10;5
 font-1 = Material Icons:size=15;10
 font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = alsa backlight wlan eth updates time date battery power
-
-cursor-click = pointer
-cursor-scroll = ns-resize
+modules-right = right6 alsa backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
 tray-background = ${colors.dark-green}
 tray-padding = ${paddings.outer}
 
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;----------------------------------------------------------
+
+[module/left]
+type = custom/text
+content = "%{T3}%{T-}"
+
+[module/right1]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.background-1}
+content-foreground = ${colors.dark-green}
+
+[module/right2]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.background-2}
+content-foreground = ${colors.background-1}
+
+[module/right3]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.background-3}
+content-foreground = ${colors.background-2}
+
+[module/right4]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.background-4}
+content-foreground = ${colors.background-3}
+
+[module/right5]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.background-5}
+content-foreground = ${colors.background-4}
+
+[module/right6]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground = ${colors.background-5}
+
 ;----------------------------------------------------------
 
 [module/i3]
 type = internal/i3
-format = <label-state><label-mode>
-label-font = 2
+format = <label-state> <label-mode>
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -62,26 +105,202 @@ ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;阮
 
 pin-workspaces = true
 
-label-mode-padding = ${paddings.outer}
-label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.yellow}
+label-mode-foreground = ${colors.background-1}
+label-mode-padding = ${paddings.outer}
 
 label-focused = %icon%
 label-focused-background = ${colors.dark-green}
 label-focused-foreground = ${colors.foreground}
 label-focused-padding = ${paddings.outer}
 
-label-unfocused-background = ${colors.background}
 label-unfocused = %icon%
+label-unfocused-background = ${colors.background-1}
+label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = ${paddings.outer}
 
 label-urgent = %icon%
-label-urgent-background = ${colors.background}
+label-urgent-background = ${colors.background-1}
 label-urgent-foreground = ${colors.red}
 label-urgent-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/power]
+type = custom/menu
+
+format = <label-toggle><menu>
+expand-right = true
+
+format-spacing = 0
+
+label-open = 
+label-open-background = ${colors.dark-green}
+label-open-foreground = ${colors.foreground}
+label-open-padding = ${paddings.inner}
+
+label-close = 
+label-close-background = ${colors.dark-green}
+label-close-padding = ${paddings.inner}
+
+menu-0-0 = 
+menu-0-0-exec = betterlockscreen -l dimblur
+menu-0-0-background = ${colors.dark-green}
+menu-0-0-padding = ${paddings.inner}
+
+menu-0-1 = 
+menu-0-1-exec = i3-msg exit
+menu-0-1-background = ${colors.dark-green}
+menu-0-1-padding = ${paddings.inner}
+
+menu-0-2 = 
+menu-0-2-exec = systemctl suspend
+menu-0-2-background = ${colors.dark-green}
+menu-0-2-padding = ${paddings.inner}
+
+menu-0-3 = 
+menu-0-3-exec = reboot
+menu-0-3-background = ${colors.dark-green}
+menu-0-3-padding = ${paddings.inner}
+
+menu-0-4 = 
+menu-0-4-exec = poweroff
+menu-0-4-background = ${colors.dark-green}
+menu-0-4-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/battery]
+type = custom/script
+exec = ~/dot/polybar/scripts/battery-combined-udev.sh
+tail = true
+
+format-background = ${colors.background-1}
+
+;----------------------------------------------------------
+
+[module/updates]
+type = custom/script
+exec = ~/dot/polybar/scripts/updates-arch-combined.sh
+interval = 600
+format-padding = ${paddings.inner}
+label-padding-left = ${paddings.inner}
+
+format-background = ${colors.background-1}
+
+;----------------------------------------------------------
+
+[module/date]
+type = internal/date
+
+interval = 1
+date = "%d/%m/%Y"
+
+label =  %date%
+format-background = ${colors.background-2}
+label-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/time]
+type = internal/date
+
+interval = 1
+time = %H:%M:%S
+
+label =  %time%
+format-background = ${colors.background-2}
+format-padding = ${paddings.inner}
+label-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/eth]
+type = internal/network
+interface = ens20u1u4
+interval = 1
+
+label-connected =  %local_ip%
+label-connected-padding-left = ${paddings.inner}
+label-connected-background = ${colors.background-3}
+
+;----------------------------------------------------------
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 1
+
+label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}
+format-connected-padding = ${paddings.inner}
+label-connected-padding-left = ${paddings.inner}
+format-connected-background = ${colors.background-3}
+
+label-disconnected = %{A1:networkmanager_dmenu:}%{A}
+format-disconnected-padding = ${paddings.inner}
+label-disconnected-padding-left = ${paddings.inner}
+label-disconnected-foreground = ${colors.gray}
+format-disconnected-background = ${colors.background-3}
+
+;----------------------------------------------------------
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 9
+warn-temperature = 80
+
+format = <label>
+label =  %temperature-c%
+format-background = ${colors.background-4}
+label-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format = <label>
+label = 龍 %percentage%%
+format-background = ${colors.background-4}
+format-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/memory]
+type = internal/memory
+interval = 0.5
+
+format = <label>
+label =  %percentage_used%%
+format-background = ${colors.background-4}
+format-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <ramp> <label>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+
+format-background = ${colors.background-5}
 
 ;----------------------------------------------------------
 
@@ -111,127 +330,11 @@ ramp-volume-2 = 
 
 ramp-headphones-0 = 
 
-;----------------------------------------------------------
-
-[module/wlan]
-type = internal/network
-interface = wlp59s0
-interval = 1
-
-label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}
-format-connected-padding = ${paddings.outer}
-
-label-disconnected = %{A1:networkmanager_dmenu:}%{A}
-label-disconnected-foreground = ${colors.gray}
-format-disconnected-padding = ${paddings.outer}
-
-;----------------------------------------------------------
-
-[module/eth]
-type = internal/network
-interface = ens20u1u4
-interval = 1
-
-label-connected =  %local_ip%
-label-connected-padding-right = ${paddings.outer}
-
-;----------------------------------------------------------
-
-[module/updates]
-type = custom/script
-exec = ~/dot/polybar/scripts/updates-arch-combined.sh
-interval = 600
-
-;----------------------------------------------------------
-
-[module/time]
-type = internal/date
-
-interval = 1
-time = %H:%M:%S
-
-label =  %time%
-format-padding = ${paddings.outer}
-
-;----------------------------------------------------------
-
-[module/date]
-type = internal/date
-
-interval = 1
-date = "%d/%m/%Y"
-
-label =  %date%
-
-;----------------------------------------------------------
-
-[module/battery]
-type = custom/script
-exec = ~/dot/polybar/scripts/battery-combined-udev.sh
-tail = true
-format-padding = ${paddings.outer}
-
-;----------------------------------------------------------
-
-[module/power]
-type = custom/menu
-
-format = <label-toggle><menu>
-expand-right = true
-
-format-spacing = 0
-
-label-open = 
-label-open-background = ${colors.dark-green}
-label-open-foreground = ${colors.foreground}
-label-open-padding = ${paddings.outer}
-
-label-close = 
-label-close-background = ${colors.dark-green}
-label-close-foreground = ${colors.foreground}
-label-close-padding-left = ${paddings.outer}
-
-menu-0-0 = 
-menu-0-0-exec = betterlockscreen -l dimblur
-menu-0-0-background = ${colors.dark-green}
-menu-0-0-padding-left = ${paddings.outer}
-
-menu-0-1 = 
-menu-0-1-exec = i3-msg exit
-menu-0-1-background = ${colors.dark-green}
-menu-0-1-padding-left = ${paddings.outer}
-
-menu-0-2 = 
-menu-0-2-exec = systemctl suspend
-menu-0-2-background = ${colors.dark-green}
-menu-0-2-padding-left = ${paddings.outer}
-
-menu-0-3 = 
-menu-0-3-exec = reboot
-menu-0-3-background = ${colors.dark-green}
-menu-0-3-padding-left = ${paddings.outer}
-
-menu-0-4 = 
-menu-0-4-exec = poweroff
-menu-0-4-background = ${colors.dark-green}
-menu-0-4-padding = ${paddings.outer}
-
-;----------------------------------------------------------
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-
-format = <ramp> <label>
-label = %percentage%%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
-ramp-padding-left = ${paddings.outer}
+format-volume-background = ${colors.background-5}
+format-volume-padding-right = ${paddings.outer}
+format-volume-padding-left = ${paddings.inner}
+label-muted-background = ${colors.background-5}
+label-muted-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
 
