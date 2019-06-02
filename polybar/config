@@ -227,7 +227,7 @@ type = internal/network
 interface = ens20u1u4
 interval = 1
 
-label-connected =  %local_ip%
+label-connected =  %local_ip%  %downspeed%  %upspeed%
 label-connected-padding-left = ${paddings.inner}
 label-connected-background = ${colors.background-3}
 
