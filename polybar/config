@@ -238,7 +238,7 @@ type = internal/network
 interface = wlp59s0
 interval = 1
 
-label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}
+label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed%  %upspeed%
 format-connected-padding = ${paddings.inner}
 label-connected-padding-left = ${paddings.inner}
 format-connected-background = ${colors.background-3}
