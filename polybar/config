@@ -24,7 +24,7 @@ outer = 5
 ;----------------------------------------------------------
 
 [bar/main]
-monitor = eDP1
+monitor = eDP-1
 dpi = 192
 height = 54
 fixed-center = true
@@ -128,7 +128,7 @@ label-unfocused-padding = ${paddings.outer}
 
 label-urgent = %icon%
 label-urgent-background = ${colors.background-1}
-label-urgent-foreground = ${colors.red}
+label-urgent-foreground = ${colors.yellow}
 label-urgent-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
@@ -260,7 +260,14 @@ warn-temperature = 80
 format = <label>
 label =  %temperature-c%
 format-background = ${colors.background-4}
+
+format-warn = <label-warn>
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.yellow}
+label-warn-background = ${colors.background-4}
+
 label-padding-left = ${paddings.inner}
+label-warn-padding-left = ${paddings.inner}
 
 ;----------------------------------------------------------
 
