@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #045D56 #285577 #ffffff #045D56   #045D56
+client.focused          #045D56 #045D56 #ffffff #045D56   #045D56
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #F44336 #ffffff #F44336   #F44336
