@@ -251,4 +251,4 @@ exec --no-startup-id setxkbmap -option compose:rctrl -option lv3:ralt_switch -op
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock and suspend
-bindsym $mod+shift+x exec betterlockscreen -l dimblur
+bindsym $mod+shift+x exec gllock
