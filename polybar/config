@@ -42,7 +42,7 @@ font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = right6 alsa backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+modules-right = right6 pulseaudio backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
@@ -150,30 +150,40 @@ label-close = 
 label-close-background = ${colors.dark-green}
 label-close-padding = ${paddings.inner}
 
-menu-0-0 = 
-menu-0-0-exec = betterlockscreen -l dimblur
+menu-0-0 = 
+menu-0-0-exec = caffeine -a
 menu-0-0-background = ${colors.dark-green}
 menu-0-0-padding = ${paddings.inner}
 
-menu-0-1 = 
-menu-0-1-exec = i3-msg exit
+menu-0-1 = 
+menu-0-1-exec = caffeine -d
 menu-0-1-background = ${colors.dark-green}
 menu-0-1-padding = ${paddings.inner}
 
-menu-0-2 = 
-menu-0-2-exec = systemctl suspend
+menu-0-2 = 
+menu-0-2-exec = gllock
 menu-0-2-background = ${colors.dark-green}
 menu-0-2-padding = ${paddings.inner}
 
-menu-0-3 = 
-menu-0-3-exec = reboot
+menu-0-3 = 
+menu-0-3-exec = i3-msg exit
 menu-0-3-background = ${colors.dark-green}
 menu-0-3-padding = ${paddings.inner}
 
-menu-0-4 = 
-menu-0-4-exec = poweroff
+menu-0-4 = 
+menu-0-4-exec = systemctl suspend
 menu-0-4-background = ${colors.dark-green}
 menu-0-4-padding = ${paddings.inner}
+
+menu-0-5 = 
+menu-0-5-exec = reboot
+menu-0-5-background = ${colors.dark-green}
+menu-0-5-padding = ${paddings.inner}
+
+menu-0-6 = 
+menu-0-6-exec = poweroff
+menu-0-6-background = ${colors.dark-green}
+menu-0-6-padding = ${paddings.inner}
 
 ;----------------------------------------------------------
 
@@ -194,6 +204,28 @@ format-padding = ${paddings.inner}
 label-padding-left = ${paddings.inner}
 
 format-background = ${colors.background-1}
+
+;----------------------------------------------------------
+
+[module/caffeine]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = 0
+label-close-padding = 1
+label-separator = " "
+
+label-open-padding-left = ${paddings.inner}
+label-close-padding-left = ${paddings.inner}
+format-background = ${colors.background-1}
+
+menu-0-0 = 
+menu-0-0-exec = caffeine -a
+menu-0-1 = 
+menu-0-1-exec = caffeine -d
+menu-0-2 = 
+menu-0-2-exec = caffeine kill
 
 ;----------------------------------------------------------
 
@@ -325,6 +357,33 @@ headphone-mixer = Headphone
 headphone-id = 21
 
 mapped = true
+
+label-muted = 
+label-muted-foreground = ${colors.gray}
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+
+format-volume-background = ${colors.background-5}
+format-volume-padding = ${paddings.outer}
+label-muted-background = ${colors.background-5}
+label-muted-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+use-ui-max = true
+
+interval = 5
 
 label-muted = 
 label-muted-foreground = ${colors.gray}
