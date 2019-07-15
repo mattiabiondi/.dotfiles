@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -show-icons
 
 # change focus
 bindsym $mod+j focus left
@@ -246,6 +246,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id megasync
 exec --no-startup-id dropbox
+exec --no-startup-id caffeine
 exec --no-startup-id libinput-gestures
 exec --no-startup-id setxkbmap -option compose:rctrl -option lv3:ralt_switch -option eurosign:5 -option rupeesign:4
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
