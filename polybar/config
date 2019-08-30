@@ -24,7 +24,7 @@ outer = 5
 ;----------------------------------------------------------
 
 [bar/main]
-monitor = eDP-1
+;monitor = eDP-1
 dpi = 192
 height = 54
 fixed-center = true
@@ -108,7 +108,7 @@ ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;ﭮ
 ws-icon-8 = 9;
-ws-icon-9 = 10;阮
+ws-icon-9 = 10;
 
 pin-workspaces = true
 
@@ -259,7 +259,7 @@ type = internal/network
 interface = ens20u1u4
 interval = 1
 
-label-connected =  %local_ip%  %downspeed%  %upspeed%
+label-connected =  %local_ip%  %downspeed:8%  %upspeed:8%
 label-connected-padding-left = ${paddings.inner}
 label-connected-background = ${colors.background-3}
 
@@ -270,7 +270,7 @@ type = internal/network
 interface = wlp59s0
 interval = 1
 
-label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed%  %upspeed%
+label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed:8%  %upspeed:8%
 format-connected-padding = ${paddings.inner}
 label-connected-padding-left = ${paddings.inner}
 format-connected-background = ${colors.background-3}
