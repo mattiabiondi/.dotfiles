@@ -1,2 +1,5 @@
-/scripts
 /polybar/scripts/*.pid
+/vim/bundle/lightline.vim
+/vim/bundle/nerdtree
+/vim/bundle/onedark.vim
+/vim/bundle/vim-gitgutter
