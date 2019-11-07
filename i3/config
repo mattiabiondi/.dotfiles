@@ -241,8 +241,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # Autostart applications
 exec --no-startup-id ~/.fehbg &
-exec --no-startup-id dunst
+# exec --no-startup-id dunst
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startuo-id gnome-keyring-daemon
+exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id megasync
 exec --no-startup-id dropbox
