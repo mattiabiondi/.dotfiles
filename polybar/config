@@ -150,40 +150,40 @@ label-close = 
 label-close-background = ${colors.dark-green}
 label-close-padding = ${paddings.inner}
 
-menu-0-0 = 
-menu-0-0-exec = caffeine -a
+;menu-0-0 = 
+;menu-0-0-exec = caffeine -a
+;menu-0-0-background = ${colors.dark-green}
+;menu-0-0-padding = ${paddings.inner}
+
+;menu-0-1 = 
+;menu-0-1-exec = caffeine -d
+;menu-0-1-background = ${colors.dark-green}
+;menu-0-1-padding = ${paddings.inner}
+
+menu-0-0 = 
+menu-0-0-exec = gllock
 menu-0-0-background = ${colors.dark-green}
 menu-0-0-padding = ${paddings.inner}
 
-menu-0-1 = 
-menu-0-1-exec = caffeine -d
+menu-0-1 = 
+menu-0-1-exec = i3-msg exit
 menu-0-1-background = ${colors.dark-green}
 menu-0-1-padding = ${paddings.inner}
 
-menu-0-2 = 
-menu-0-2-exec = gllock
+menu-0-2 = 
+menu-0-2-exec = systemctl suspend
 menu-0-2-background = ${colors.dark-green}
 menu-0-2-padding = ${paddings.inner}
 
-menu-0-3 = 
-menu-0-3-exec = i3-msg exit
+menu-0-3 = 
+menu-0-3-exec = reboot
 menu-0-3-background = ${colors.dark-green}
 menu-0-3-padding = ${paddings.inner}
 
-menu-0-4 = 
-menu-0-4-exec = systemctl suspend
+menu-0-4 = 
+menu-0-4-exec = poweroff
 menu-0-4-background = ${colors.dark-green}
 menu-0-4-padding = ${paddings.inner}
-
-menu-0-5 = 
-menu-0-5-exec = reboot
-menu-0-5-background = ${colors.dark-green}
-menu-0-5-padding = ${paddings.inner}
-
-menu-0-6 = 
-menu-0-6-exec = poweroff
-menu-0-6-background = ${colors.dark-green}
-menu-0-6-padding = ${paddings.inner}
 
 ;----------------------------------------------------------
 

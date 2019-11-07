@@ -1,5 +1,5 @@
 rofi.theme: ~/.config/rofi/theme.rasi
-rofi.modi: combi
+rofi.modi: combi,drun
 rofi.dpi: 192
 rofi.font: Roboto 10
 rofi.display-drun: 
