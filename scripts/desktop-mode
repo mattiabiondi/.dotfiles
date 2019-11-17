@@ -1,0 +1,38 @@
+#!/bin/sh
+
+mode=''
+EXTERNAL_OUTPUT="DP3"
+INTERNAL_OUTPUT="eDP1"
+
+help() {
+  printf "desktop-mode: \n\t\t -1 to turn on\n\t\t -0 to turn off\n"
+  exit 1
+}
+
+on() {
+  xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
+  setxkbmap -option compose:rctrl -option lv3:ralt_switch -option eurosign:5 -option rupeesign:4
+}
+
+off() {
+  xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
+}
+
+while getopts '01h' flag; do
+  case "${flag}" in
+    0) mode='false' ;;
+    1) mode='true' ;;
+    h) help ;;
+  esac
+done
+
+if [ "$mode" = true ]; then
+  on
+elif [ "$mode" = false ]; then
+  off
+else
+  help
+fi
+
+i3-msg restart
+notify-send 'Desktop mode: '$mode 'blabla' --icon=computer
