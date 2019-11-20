@@ -35,4 +35,4 @@ else
 fi
 
 i3-msg restart
-notify-send 'Desktop mode: '$mode 'blabla' --icon=computer
+notify-send 'Desktop mode: '$mode --icon=computer
