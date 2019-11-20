@@ -246,7 +246,7 @@ bindsym F8 exec --no-startup-id my-hdmi
 
 # Autostart applications
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id picom -b
+exec --no-startup-id picom -Cb
 # exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
