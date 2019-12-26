@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Xft.dpi: 144" | xrdb -merge
+
+i3-msg restart
