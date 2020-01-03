@@ -6,57 +6,53 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #FFFFFF
-XTerm*foreground:        #222222
-XTerm*pointerColor:      #1ABB9B
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+XTerm*background:        nord0
+XTerm*foreground:        nord4
+XTerm*pointerColor:      nord4
 XTerm*faceName:          Fixed
-XTerm*faceSize:          11
-XTerm*reverseVideo:      on
+XTerm*faceSize:          10
 XTerm*selectToClipboard: true
 
 st.alpha: 0.92
 st.font: Monospace-10;
 st.termname: st-256color
 
-*fading:                          8
-*fadeColor:                       black
-*cursorColor:                     #1ABB9B
-*pointerColorBackground:          #2B2C2B
-*pointerColorForeground:          #16A085
-
-! special
-*.foreground:   #FFFFFF
-*.background:   #222222
-*.cursorColor:  #c5c8c6
-
-! black
-*.color0:       #191919
-*.color8:       #252525
-
-! red
-*.color1:       #ff6859
-*.color9:       #ff857c
-
-! green
-*.color2:       #007d51
-*.color10:      #1eb980
-
-! yellow
-*.color3:       #ffac12
-*.color11:      #ffcf44
-
-! blue
-*.color4:       #0082fb
-*.color12:      #72deff
-
-! magenta
-*.color5:       #a932ff
-*.color13:      #b15dff
-
-! cyan
-*.color6:       #00aea4
-*.color14:      #56d1ca
-
-! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

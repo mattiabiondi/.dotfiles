@@ -1,19 +1,24 @@
 [colors]
-background-1 = #222222
-background-2 = #2D2D2D
-background-3 = #383838
-background-4 = #434343
-background-5 = #4E4E4E
-background-6 = #222222
+nord0 = #2E3440
+nord1 = #3B4252
+nord2 = #434C5E
+nord3 = #4C566A
+nord3.5 = #434C5E
 
-foreground = #FFFFFF
+nord4 = #D8DEE9
+nord5 = #E5E9F0
+nord6 = #ECEFF4
 
-red = #F44336
-green = #1EB980
-dark-green = #045D56
-yellow = #FFAC12
-gray = #ADADB1
-blue = #0082FB
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+nord10 = #5E81AC
+
+nord11 = #BF616A
+nord12 = #D08770
+nord13 = #EBCB8B
+nord14 = #A3BE8C
+nord15 = #B48EAD
 
 ;----------------------------------------------------------
 
@@ -30,7 +35,7 @@ height = 54
 fixed-center = true
 
 background = #00000000
-foreground = ${colors.foreground}
+foreground = ${colors.nord6}
 
 border-top-size = 15
 border-left-size = 15
@@ -46,7 +51,7 @@ modules-right = right6 pulseaudio backlight right5 memory cpu temperature right4
 
 tray-position = right
 tray-maxsize = 32
-tray-background = ${colors.dark-green}
+tray-background = ${colors.nord10}
 tray-padding = ${paddings.outer}
 
 cursor-click = pointer
@@ -61,7 +66,7 @@ height = 40.5
 fixed-center = true
 
 background = #00000000
-foreground = ${colors.foreground}
+foreground = ${colors.nord6}
 
 border-top-size = 15
 border-left-size = 15
@@ -77,7 +82,7 @@ modules-right = right7 memory cpu temperature right4 wlan eth right3 time date r
 
 tray-position = right
 tray-maxsize = 32
-tray-background = ${colors.dark-green}
+tray-background = ${colors.nord10}
 tray-padding = ${paddings.outer}
 
 cursor-click = pointer
@@ -92,42 +97,42 @@ content = "%{T3}%{T-}"
 [module/right1]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.background-1}
-content-foreground = ${colors.dark-green}
+content-background = ${colors.nord0}
+content-foreground = ${colors.nord10}
 
 [module/right2]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.background-2}
-content-foreground = ${colors.background-1}
+content-background = ${colors.nord1}
+content-foreground = ${colors.nord0}
 
 [module/right3]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.background-3}
-content-foreground = ${colors.background-2}
+content-background = ${colors.nord2}
+content-foreground = ${colors.nord1}
 
 [module/right4]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.background-4}
-content-foreground = ${colors.background-3}
+content-background = ${colors.nord3}
+content-foreground = ${colors.nord2}
 
 [module/right5]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.background-5}
-content-foreground = ${colors.background-4}
+content-background = ${colors.nord3.5}
+content-foreground = ${colors.nord3}
 
 [module/right6]
 type = custom/text
 content = "%{T3}%{T-}"
-content-foreground = ${colors.background-5}
+content-foreground = ${colors.nord3.5}
 
 [module/right7]
 type = custom/text
 content = "%{T3}%{T-}"
-content-foreground = ${colors.background-4}
+content-foreground = ${colors.nord3}
 
 ;----------------------------------------------------------
 
@@ -148,28 +153,28 @@ ws-icon-9 = 10;
 
 pin-workspaces = true
 
-label-mode-background = ${colors.yellow}
-label-mode-foreground = ${colors.background-1}
+label-mode-background = ${colors.nord13}
+label-mode-foreground = ${colors.nord0}
 label-mode-padding = ${paddings.outer}
 
 label-focused = %icon%
-label-focused-background = ${colors.dark-green}
-label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.nord10}
+label-focused-foreground = ${colors.nord6}
 label-focused-padding = ${paddings.outer}
 
 label-unfocused = %icon%
-label-unfocused-background = ${colors.background-1}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.nord0}
+label-unfocused-foreground = ${colors.nord6}
 label-unfocused-padding = ${paddings.outer}
 
 label-visible = %icon%
-label-visible-background = ${colors.background-1}
-label-visible-foreground = ${colors.foreground}
+label-visible-background = ${colors.nord0}
+label-visible-foreground = ${colors.nord6}
 label-visible-padding = ${paddings.outer}
 
 label-urgent = %icon%
-label-urgent-background = ${colors.background-1}
-label-urgent-foreground = ${colors.yellow}
+label-urgent-background = ${colors.nord0}
+label-urgent-foreground = ${colors.nord13}
 label-urgent-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
@@ -183,47 +188,47 @@ expand-right = true
 format-spacing = 0
 
 label-open = 
-label-open-background = ${colors.dark-green}
-label-open-foreground = ${colors.foreground}
+label-open-background = ${colors.nord10}
+label-open-foreground = ${colors.nord6}
 label-open-padding = ${paddings.inner}
 
 label-close = 
-label-close-background = ${colors.dark-green}
+label-close-background = ${colors.nord10}
 label-close-padding = ${paddings.inner}
 
 ;menu-0-0 = 
 ;menu-0-0-exec = caffeine -a
-;menu-0-0-background = ${colors.dark-green}
+;menu-0-0-background = ${colors.nord10}
 ;menu-0-0-padding = ${paddings.inner}
 
 ;menu-0-1 = 
 ;menu-0-1-exec = caffeine -d
-;menu-0-1-background = ${colors.dark-green}
+;menu-0-1-background = ${colors.nord10}
 ;menu-0-1-padding = ${paddings.inner}
 
 menu-0-0 = 
 menu-0-0-exec = gllock
-menu-0-0-background = ${colors.dark-green}
+menu-0-0-background = ${colors.nord10}
 menu-0-0-padding = ${paddings.inner}
 
 menu-0-1 = 
 menu-0-1-exec = i3-msg exit
-menu-0-1-background = ${colors.dark-green}
+menu-0-1-background = ${colors.nord10}
 menu-0-1-padding = ${paddings.inner}
 
 menu-0-2 = 
 menu-0-2-exec = systemctl suspend
-menu-0-2-background = ${colors.dark-green}
+menu-0-2-background = ${colors.nord10}
 menu-0-2-padding = ${paddings.inner}
 
 menu-0-3 = 
 menu-0-3-exec = reboot
-menu-0-3-background = ${colors.dark-green}
+menu-0-3-background = ${colors.nord10}
 menu-0-3-padding = ${paddings.inner}
 
 menu-0-4 = 
 menu-0-4-exec = poweroff
-menu-0-4-background = ${colors.dark-green}
+menu-0-4-background = ${colors.nord10}
 menu-0-4-padding = ${paddings.inner}
 
 ;----------------------------------------------------------
@@ -233,7 +238,7 @@ type = custom/script
 exec = ~/dot/polybar/scripts/battery-combined-udev.sh
 tail = true
 
-format-background = ${colors.background-1}
+format-background = ${colors.nord0}
 
 ;----------------------------------------------------------
 
@@ -244,7 +249,7 @@ interval = 600
 format-padding = ${paddings.inner}
 label-padding-left = ${paddings.inner}
 
-format-background = ${colors.background-1}
+format-background = ${colors.nord0}
 
 ;----------------------------------------------------------
 
@@ -259,7 +264,7 @@ label-separator = " "
 
 label-open-padding-left = ${paddings.inner}
 label-close-padding-left = ${paddings.inner}
-format-background = ${colors.background-1}
+format-background = ${colors.nord0}
 
 menu-0-0 = 
 menu-0-0-exec = caffeine -a
@@ -277,7 +282,7 @@ interval = 1
 date = "%d/%m/%Y"
 
 label =  %date%
-format-background = ${colors.background-2}
+format-background = ${colors.nord1}
 label-padding-left = ${paddings.inner}
 
 ;----------------------------------------------------------
@@ -289,7 +294,7 @@ interval = 1
 time = %H:%M:%S
 
 label =  %time%
-format-background = ${colors.background-2}
+format-background = ${colors.nord1}
 format-padding = ${paddings.inner}
 label-padding-left = ${paddings.inner}
 
@@ -302,7 +307,7 @@ interval = 1
 
 label-connected =  %local_ip%  %downspeed:8%  %upspeed:8%
 label-connected-padding-left = ${paddings.inner}
-label-connected-background = ${colors.background-3}
+label-connected-background = ${colors.nord2}
 
 ;----------------------------------------------------------
 
@@ -314,13 +319,13 @@ interval = 1
 label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed:8%  %upspeed:8%
 format-connected-padding = ${paddings.inner}
 label-connected-padding-left = ${paddings.inner}
-format-connected-background = ${colors.background-3}
+format-connected-background = ${colors.nord2}
 
 label-disconnected = %{A1:networkmanager_dmenu:}%{A}
 format-disconnected-padding = ${paddings.inner}
 label-disconnected-padding-left = ${paddings.inner}
-label-disconnected-foreground = ${colors.gray}
-format-disconnected-background = ${colors.background-3}
+label-disconnected-foreground = ${colors.nord4}
+format-disconnected-background = ${colors.nord2}
 
 ;----------------------------------------------------------
 
@@ -332,12 +337,12 @@ warn-temperature = 80
 
 format = <label>
 label =  %temperature-c%
-format-background = ${colors.background-4}
+format-background = ${colors.nord3}
 
 format-warn = <label-warn>
 label-warn =  %temperature-c%
-label-warn-foreground = ${colors.yellow}
-label-warn-background = ${colors.background-4}
+label-warn-foreground = ${colors.nord12}
+label-warn-background = ${colors.nord3}
 
 label-padding-left = ${paddings.inner}
 label-warn-padding-left = ${paddings.inner}
@@ -350,7 +355,7 @@ interval = 0.5
 
 format = <label>
 label = 龍 %percentage%%
-format-background = ${colors.background-4}
+format-background = ${colors.nord3}
 format-padding = ${paddings.inner}
 
 ;----------------------------------------------------------
@@ -361,7 +366,7 @@ interval = 0.5
 
 format = <label>
 label =  %percentage_used%%
-format-background = ${colors.background-4}
+format-background = ${colors.nord3}
 format-padding = ${paddings.inner}
 
 ;----------------------------------------------------------
@@ -380,7 +385,7 @@ ramp-4 = 
 ramp-5 = 
 ramp-6 = 
 
-format-background = ${colors.background-5}
+format-background = ${colors.nord3.5}
 
 ;----------------------------------------------------------
 
@@ -400,7 +405,7 @@ headphone-id = 21
 mapped = true
 
 label-muted = 
-label-muted-foreground = ${colors.gray}
+label-muted-foreground = ${colors.nord4}
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
@@ -410,9 +415,9 @@ ramp-volume-2 = 
 
 ramp-headphones-0 = 
 
-format-volume-background = ${colors.background-5}
+format-volume-background = ${colors.nord3.5}
 format-volume-padding = ${paddings.outer}
-label-muted-background = ${colors.background-5}
+label-muted-background = ${colors.nord3.5}
 label-muted-padding = ${paddings.outer}
 
 ;----------------------------------------------------------
@@ -427,7 +432,7 @@ use-ui-max = true
 interval = 5
 
 label-muted = 
-label-muted-foreground = ${colors.gray}
+label-muted-foreground = ${colors.nord4}
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
@@ -437,9 +442,9 @@ ramp-volume-2 = 
 
 ramp-headphones-0 = 
 
-format-volume-background = ${colors.background-5}
+format-volume-background = ${colors.nord3.5}
 format-volume-padding = ${paddings.outer}
-label-muted-background = ${colors.background-5}
+label-muted-background = ${colors.nord3.5}
 label-muted-padding = ${paddings.outer}
 
 ;----------------------------------------------------------

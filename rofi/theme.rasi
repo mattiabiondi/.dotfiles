@@ -1,10 +1,9 @@
 * {
-    text-color:                  #FFFFFF;
-    background-color:            #222222;
-    red:                         #F44336;
-    yellow:                      #FFAC12;
-    blue:                        #0082FB;
-    dark-green:                  #045D56;
+    text-color:                  #ECEFF4;
+    background-color:            #1C2028;
+    red:                         #BF616A;
+    yellow:                      #EBCB8B;
+    blue:                        #5E81AC;
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -18,7 +17,7 @@
     alternate-active-background: @blue;
     bordercolor:                 @foreground;
     normal-background:           @background;
-    selected-normal-background:  @dark-green;
+    selected-normal-background:  @blue;
     separatorcolor:              @yellow;
     spacing:                     2;
     urgent-background:           @red;
