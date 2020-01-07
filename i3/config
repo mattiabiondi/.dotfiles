@@ -176,6 +176,14 @@ bindsym $mod+r mode ""
 for_window [urgent=latest] focus
 
 # automatically putting workspaces on specific screens
+workspace $ws1 output eDP1
+workspace $ws2 output eDP1
+workspace $ws3 output eDP1
+workspace $ws4 output eDP1
+workspace $ws5 output eDP1
+workspace $ws6 output eDP1
+workspace $ws7 output eDP1
+workspace $ws8 output DP1
 workspace $ws9 output DP1
 workspace $ws10 output DP1
 
