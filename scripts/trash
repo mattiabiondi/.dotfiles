@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DATE=`date +%d-%m-%y`
+
+if [ ! -d ${HOME}/.trash/$DATE ]; then
+  mkdir -p ${HOME}/.trash/$DATE
+fi
+
+for i in $@; do
+  mv $i ${HOME}/.trash/$DATE
+done
