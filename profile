@@ -2,7 +2,7 @@
 
 export PATH=$PATH:$HOME/.scripts
 export TERMINAL="st"
-export BROWSER="google-chrome-stable"
+export BROWSER="brave"
 export EDITOR="vim"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then

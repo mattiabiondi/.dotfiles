@@ -3,7 +3,8 @@ nord0 = #2E3440
 nord1 = #3B4252
 nord2 = #434C5E
 nord3 = #4C566A
-nord3.5 = #434C5E
+nord3.25 = #546076
+nord3.5 = #5C6A82
 
 nord4 = #D8DEE9
 nord5 = #E5E9F0
@@ -47,7 +48,7 @@ font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = right6 pulseaudio backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio padding6 backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
@@ -78,7 +79,7 @@ font-2 = NotoEmoji Nerd Font:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = right7 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
@@ -121,18 +122,29 @@ content-foreground = ${colors.nord2}
 [module/right5]
 type = custom/text
 content = "%{T3}%{T-}"
-content-background = ${colors.nord3.5}
+content-background = ${colors.nord3.25}
 content-foreground = ${colors.nord3}
 
 [module/right6]
 type = custom/text
 content = "%{T3}%{T-}"
-content-foreground = ${colors.nord3.5}
+content-background = ${colors.nord3.5}
+content-foreground = ${colors.nord3.25}
 
 [module/right7]
 type = custom/text
 content = "%{T3}%{T-}"
-content-foreground = ${colors.nord3}
+content-foreground = ${colors.nord3.5}
+
+[module/padding6]
+type = custom/text
+content = "%{B#546076}%{F}    %{B- F-}"
+content-foreground = ${colors.nord3.25}
+
+[module/padding7]
+type = custom/text
+content = "%{B#5C6A82}%{F}  %{B- F-}"
+content-foreground = ${colors.nord3.5}
 
 ;----------------------------------------------------------
 
@@ -385,7 +397,7 @@ ramp-4 = 
 ramp-5 = 
 ramp-6 = 
 
-format-background = ${colors.nord3.5}
+format-background = ${colors.nord3.25}
 
 ;----------------------------------------------------------
 
@@ -442,10 +454,20 @@ ramp-volume-2 = 
 
 ramp-headphones-0 = 
 
-format-volume-background = ${colors.nord3.5}
-format-volume-padding = ${paddings.outer}
-label-muted-background = ${colors.nord3.5}
-label-muted-padding = ${paddings.outer}
+format-volume-background = ${colors.nord3.25}
+label-muted-background = ${colors.nord3.25}
+
+;----------------------------------------------------------
+
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/dot/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
+tail = true
+click-middle = ~/dot/polybar/scripts/player-mpris-tail.py play-pause &
+click-left = ~/dot/polybar/scripts/player-mpris-tail.py next &
+click-right = ~/dot/polybar/scripts/player-mpris-tail.py previous &
+
+format-background = ${colors.nord3.5}
 
 ;----------------------------------------------------------
 
