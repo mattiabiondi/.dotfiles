@@ -1,5 +1,5 @@
 " General
-set number		" Show line numbers
+set number			" Show line numbers
 set linebreak		" Break lines at word (requires Wrap lines)
 set showbreak=+++ 	" Wrap-broken line prefix
 set textwidth=80	" Line wrap (number of cols)
@@ -25,12 +25,30 @@ set backupdir=~/backup/vim	" Backup directories
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
-execute pathogen#infect()
-let g:NERDTreeNodeDelimiter = "\u00a0"
+map <C-n> :NERDTreeToggle<CR>
 set updatetime=100
 
-call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
-call plug#end()
+set laststatus=2
+let g:lightline = {
+\	'colorscheme': 'nord',
+\	'active': {
+\		'left': [ [ 'mode', 'paste' ],
+\				[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+\	},
+\	'component': {
+\		'lineinfo': ' %3l:%-2v',
+\	},
+\	'component_function': {
+\		'gitbranch': 'FugitiveHead'
+\	},
+\}
+let g:lightline.separator = {
+\	'left': '', 'right': ''
+\}
+let g:lightline.subseparator = {
+\	'left': '', 'right': ''
+\}
+
 
 colorscheme nord
+syntax on
