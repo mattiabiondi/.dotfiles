@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Xft.dpi: 144" | xrdb -merge
+
+i3-msg restart
+setxkbmap -option compose:rctrl -option lv3:ralt_switch -option eurosign:5 -option rupeesign:4

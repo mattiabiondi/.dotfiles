@@ -37,7 +37,7 @@ XTerm*faceSize:          9
 XTerm*selectToClipboard: true
 
 *.alpha: 0.92
-*.font: FiraCode Nerd Font Mono-9;
+*.font: JetBrainsMono Nerd Font-9;
 *.termname: st-256color
 
 *.color0: nord1

@@ -13,3 +13,6 @@
 [submodule "vim/pack/plugins/start/nord-vim"]
 	path = vim/pack/plugins/start/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim
+[submodule "themes/Nordic"]
+	path = themes/Nordic
+	url = https://github.com/EliverLara/Nordic
