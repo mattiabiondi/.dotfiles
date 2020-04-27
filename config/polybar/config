@@ -463,9 +463,9 @@ label-muted-background = ${colors.nord3.25}
 type = custom/script
 exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
 tail = true
-click-middle = ~/dot/polybar/scripts/player-mpris-tail.py play-pause &
-click-left = ~/dot/polybar/scripts/player-mpris-tail.py next &
-click-right = ~/dot/polybar/scripts/player-mpris-tail.py previous &
+click-middle = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
+click-left = ~/.config/polybar/scripts/player-mpris-tail.py next &
+click-right = ~/.config/polybar/scripts/player-mpris-tail.py previous &
 
 format-background = ${colors.nord3.5}
 
