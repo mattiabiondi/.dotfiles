@@ -48,7 +48,7 @@ font-2 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
-modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio padding6 backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio padding6 backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 gmail updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
@@ -79,7 +79,7 @@ font-2 = NotoEmoji Nerd Font:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio right5 memory cpu temperature right4 wlan eth right3 time date right2 gmail updates battery right1 power
 
 tray-position = right
 tray-maxsize = 32
@@ -259,6 +259,17 @@ type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 interval = 600
 format-padding = ${paddings.inner}
+label-padding-left = ${paddings.inner}
+
+format-background = ${colors.nord0}
+
+;----------------------------------------------------------
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/scripts/polybar-gmail/launch.py -p  -c ECEFF4 -ns
+tail = true
+click-left = xdg-open https://mail.google.com
 label-padding-left = ${paddings.inner}
 
 format-background = ${colors.nord0}

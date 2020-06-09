@@ -16,3 +16,6 @@
 [submodule "themes/Nordic"]
 	path = themes/Nordic
 	url = https://github.com/EliverLara/Nordic
+[submodule "config/polybar/scripts/polybar-gmail"]
+	path = config/polybar/scripts/polybar-gmail
+	url = https://github.com/vyachkonovalov/polybar-gmail.git
