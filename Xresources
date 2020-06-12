@@ -29,16 +29,10 @@ Xft.lcdfilter: lcddefault
 *fading: 35
 *fadeColor: nord3
 
-XTerm*background:        nord0
-XTerm*foreground:        nord4
-XTerm*pointerColor:      nord4
-XTerm*faceName:          Fixed
-XTerm*faceSize:          9
+XTerm*font:	JetBrainsMono Nerd Font
+XTerm*faceName: JetBrainsMono Nerd Font
+XTerm*faceSize: 9
 XTerm*selectToClipboard: true
-
-*.alpha: 0.92
-*.font: JetBrainsMono Nerd Font-9;
-*.termname: st-256color
 
 *.color0: nord1
 *.color1: nord11

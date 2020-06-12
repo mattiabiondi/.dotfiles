@@ -25,6 +25,8 @@ set backupdir=~/backup/vim	" Backup directories
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
+set ttymouse=sgr	" Fix mouse issue using Alacritty terminal
+
 map <C-n> :NERDTreeToggle<CR>
 set updatetime=100
 

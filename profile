@@ -1,7 +1,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export PATH=$PATH:$HOME/.scripts
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export EDITOR="vim"
 
