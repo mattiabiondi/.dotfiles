@@ -13,7 +13,7 @@ updates=$(("$updates_arch" + "$updates_aur"))
 RED='\033[0;31m'
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates"
+    echo "罹 $updates"
 else
-    echo " $updates"
+    echo "裏 $updates"
 fi

@@ -11,6 +11,6 @@ alias la='ls -la --color=auto'
 alias cp="cp -i"
 alias grep='grep --color=auto'
 
-PS1='\[$(tput bold)\]\[\033[1;36m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\] \[\033[0;34m\]\w\[$(tput sgr0)\] \[\033[0;35m\]  \[$(tput sgr0)\]'
+PS1='\[$(tput bold)\]\[\033[1;36m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\] \[\033[0;34m\]\w\[$(tput sgr0)\] \[\033[0;35m\]ﰌ  \[$(tput sgr0)\]'
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)

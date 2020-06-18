@@ -43,8 +43,7 @@ border-left-size = 15
 border-right-size = 15
 
 font-0 = Roboto:weight=regular:size=10;5
-font-1 = Material Icons:size=15;10
-font-2 = NotoEmoji Nerd Font:size=15;7
+font-1 = NotoEmoji Nerd Font:size=15;7
 
 modules-left = i3
 modules-center =
@@ -74,8 +73,7 @@ border-left-size = 15
 border-right-size = 15
 
 font-0 = Roboto:weight=regular:size=10;3
-font-1 = Material Icons:size=15;7
-font-2 = NotoEmoji Nerd Font:size=15;6
+font-1 = NotoEmoji Nerd Font:size=15;6
 
 modules-left = i3
 modules-center =
@@ -152,16 +150,16 @@ content-foreground = ${colors.nord3.5}
 type = internal/i3
 format = <label-state> <label-mode>
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;ﭮ
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 pin-workspaces = true
 
@@ -199,7 +197,7 @@ expand-right = true
 
 format-spacing = 0
 
-label-open = 
+label-open = 襤
 label-open-background = ${colors.nord10}
 label-open-foreground = ${colors.nord6}
 label-open-padding = ${paddings.inner}
@@ -208,37 +206,27 @@ label-close = 
 label-close-background = ${colors.nord10}
 label-close-padding = ${paddings.inner}
 
-;menu-0-0 = 
-;menu-0-0-exec = caffeine -a
-;menu-0-0-background = ${colors.nord10}
-;menu-0-0-padding = ${paddings.inner}
-
-;menu-0-1 = 
-;menu-0-1-exec = caffeine -d
-;menu-0-1-background = ${colors.nord10}
-;menu-0-1-padding = ${paddings.inner}
-
-menu-0-0 = 
+menu-0-0 = 
 menu-0-0-exec = gllock
 menu-0-0-background = ${colors.nord10}
 menu-0-0-padding = ${paddings.inner}
 
-menu-0-1 = 
+menu-0-1 = 省
 menu-0-1-exec = i3-msg exit
 menu-0-1-background = ${colors.nord10}
 menu-0-1-padding = ${paddings.inner}
 
-menu-0-2 = 
+menu-0-2 = 
 menu-0-2-exec = systemctl suspend
 menu-0-2-background = ${colors.nord10}
 menu-0-2-padding = ${paddings.inner}
 
-menu-0-3 = 
+menu-0-3 = 累
 menu-0-3-exec = reboot
 menu-0-3-background = ${colors.nord10}
 menu-0-3-padding = ${paddings.inner}
 
-menu-0-4 = 
+menu-0-4 = ﮣ
 menu-0-4-exec = poweroff
 menu-0-4-background = ${colors.nord10}
 menu-0-4-padding = ${paddings.inner}
@@ -304,7 +292,7 @@ type = internal/date
 interval = 1
 date = "%d/%m/%Y"
 
-label =  %date%
+label =  %date%
 format-background = ${colors.nord1}
 label-padding-left = ${paddings.inner}
 
@@ -316,7 +304,7 @@ type = internal/date
 interval = 1
 time = %H:%M:%S
 
-label =  %time%
+label =  %time%
 format-background = ${colors.nord1}
 format-padding = ${paddings.inner}
 label-padding-left = ${paddings.inner}
@@ -328,7 +316,7 @@ type = internal/network
 interface = ens20u1u4
 interval = 1
 
-label-connected =  %local_ip%  %downspeed:8%  %upspeed:8%
+label-connected =  %local_ip%  %downspeed:8%  %upspeed:8%
 label-connected-padding-left = ${paddings.inner}
 label-connected-background = ${colors.nord2}
 
@@ -339,12 +327,12 @@ type = internal/network
 interface = wlp59s0
 interval = 1
 
-label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed:8%  %upspeed:8%
+label-connected = %{A1:networkmanager_dmenu:}直  %signal%%%{A}  %downspeed:8%  %upspeed:8%
 format-connected-padding = ${paddings.inner}
 label-connected-padding-left = ${paddings.inner}
 format-connected-background = ${colors.nord2}
 
-label-disconnected = %{A1:networkmanager_dmenu:}%{A}
+label-disconnected = %{A1:networkmanager_dmenu:}睊%{A}
 format-disconnected-padding = ${paddings.inner}
 label-disconnected-padding-left = ${paddings.inner}
 label-disconnected-foreground = ${colors.nord4}
@@ -359,11 +347,11 @@ thermal-zone = 9
 warn-temperature = 80
 
 format = <label>
-label =  %temperature-c%
+label =  %temperature-c%
 format-background = ${colors.nord3}
 
 format-warn = <label-warn>
-label-warn =  %temperature-c%
+label-warn =  %temperature-c%
 label-warn-foreground = ${colors.nord12}
 label-warn-background = ${colors.nord3}
 
@@ -388,7 +376,7 @@ type = internal/memory
 interval = 0.5
 
 format = <label>
-label =  %percentage_used%%
+label =  %percentage_used%%
 format-background = ${colors.nord3}
 format-padding = ${paddings.inner}
 
@@ -400,13 +388,13 @@ card = intel_backlight
 
 format = <ramp> <label>
 label = %percentage%%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
 
 format-background = ${colors.nord3.25}
 
@@ -427,16 +415,16 @@ headphone-id = 21
 
 mapped = true
 
-label-muted = 
+label-muted = ﱝ
 label-muted-foreground = ${colors.nord4}
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
 
-ramp-headphones-0 = 
+ramp-headphones-0 = 
 
 format-volume-background = ${colors.nord3.5}
 format-volume-padding = ${paddings.outer}
@@ -454,16 +442,16 @@ use-ui-max = true
 
 interval = 5
 
-label-muted = 
+label-muted = ﱝ
 label-muted-foreground = ${colors.nord4}
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
 
-ramp-headphones-0 = 
+ramp-headphones-0 = 
 
 format-volume-background = ${colors.nord3.25}
 label-muted-background = ${colors.nord3.25}
