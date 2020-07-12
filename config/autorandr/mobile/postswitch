@@ -1,5 +1,6 @@
 #!/bin/sh
 
 echo "Xft.dpi: 192" | xrdb -merge
-
-i3-msg restart
+bspc monitor eDP1 -d " I" II III IV V VI VII VIII  
+~/.config/polybar/launch.sh
+~/.fehbg &
