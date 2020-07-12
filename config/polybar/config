@@ -1,290 +1,233 @@
+;---------------------------------------
+;	COLORS
+;---------------------------------------
+
 [colors]
 nord0 = #2E3440
 nord1 = #3B4252
 nord2 = #434C5E
 nord3 = #4C566A
-nord3.25 = #546076
-nord3.5 = #5C6A82
-
+nord3.1 = #546076
+nord3.2 = #5C6A82
 nord4 = #D8DEE9
 nord5 = #E5E9F0
 nord6 = #ECEFF4
-
 nord7 = #8FBCBB
 nord8 = #88C0D0
 nord9 = #81A1C1
 nord10 = #5E81AC
-
 nord11 = #BF616A
 nord12 = #D08770
 nord13 = #EBCB8B
 nord14 = #A3BE8C
 nord15 = #B48EAD
 
-;----------------------------------------------------------
+;---------------------------------------
+;	PADDINGS
+;---------------------------------------
 
 [paddings]
-inner = 2.5
-outer = 5
+inner = 1
+outer = 2
 
-;----------------------------------------------------------
+;---------------------------------------
+;	MOBILE BAR
+;---------------------------------------
 
-[bar/main]
+[bar/mobile]
 monitor = eDP1
+bottom = true
+fixed-center = true
+width = 100%
+height = 2.5%
 dpi = 192
-height = 54
-fixed-center = true
 
-background = #00000000
+background = #21262e
 foreground = ${colors.nord6}
 
-border-top-size = 15
-border-left-size = 15
-border-right-size = 15
+wm-restack = bspwm
 
-font-0 = Roboto:weight=regular:size=10;5
-font-1 = NotoEmoji Nerd Font:size=15;7
+;---------------------------------------
 
-modules-left = i3
+font-0 = JetBrains Mono:size=10;5
+font-1 = FontAwesome5FreeSolid:size=10;5
+font-2 = FontAwesome5FreeRegular:size=10;5
+font-3 = FontAwesome5Brands:size=10;5
+
+;---------------------------------------
+
+modules-left = bspwm
 modules-center =
-modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio padding6 backlight right5 memory cpu temperature right4 wlan eth right3 time date right2 gmail updates battery right1 power
+modules-right = player-mpris-tail pulseaudio backlight memory cpu temperature wlan eth time date updates battery power
 
-tray-position = right
-tray-maxsize = 32
-tray-background = ${colors.nord10}
-tray-padding = ${paddings.outer}
+;---------------------------------------
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-;----------------------------------------------------------
+;---------------------------------------
+;	DOCKED BAR
+;---------------------------------------
 
-[bar/external]
+[bar/docked]
 monitor = DP3
-dpi = 144
-height = 40.5
+bottom = true
 fixed-center = true
+width = 100%
+height = 1.875%
+dpi = 144
 
-background = #00000000
+background = #21262e
 foreground = ${colors.nord6}
 
-border-top-size = 15
-border-left-size = 15
-border-right-size = 15
+wm-restack = bspwm
 
-font-0 = Roboto:weight=regular:size=10;3
-font-1 = NotoEmoji Nerd Font:size=15;6
+;---------------------------------------
 
-modules-left = i3
+font-0 = JetBrains Mono:size=10;4
+font-1 = FontAwesome5FreeSolid:size=10;4
+font-2 = FontAwesome5FreeRegular:size=10;4
+font-3 = FontAwesome5Brands:size=10;4
+
+;---------------------------------------
+
+modules-left = bspwm
 modules-center =
-modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio right5 memory cpu temperature right4 wlan eth right3 time date right2 gmail updates battery right1 power
+modules-right = player-mpris-tail pulseaudio backlight memory cpu temperature wlan eth time date updates battery power
 
-tray-position = right
-tray-maxsize = 32
-tray-background = ${colors.nord10}
-tray-padding = ${paddings.outer}
+;---------------------------------------
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-;----------------------------------------------------------
+;---------------------------------------
+;	BSPWM MODULE
+;---------------------------------------
 
-[module/left]
-type = custom/text
-content = "%{T3}%{T-}"
+[module/bspwm]
+type = internal/bspwm
 
-[module/right1]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord0}
-content-foreground = ${colors.nord10}
+format = <label-state>
 
-[module/right2]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord1}
-content-foreground = ${colors.nord0}
+label-focused-foreground = ${colors.nord8}
+label-focused-padding = ${paddings.inner}
 
-[module/right3]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord2}
-content-foreground = ${colors.nord1}
+label-occupied-foreground = ${colors.nord15}
+label-occupied-padding = ${paddings.inner}
 
-[module/right4]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord3}
-content-foreground = ${colors.nord2}
-
-[module/right5]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord3.25}
-content-foreground = ${colors.nord3}
-
-[module/right6]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${colors.nord3.5}
-content-foreground = ${colors.nord3.25}
-
-[module/right7]
-type = custom/text
-content = "%{T3}%{T-}"
-content-foreground = ${colors.nord3.5}
-
-[module/padding6]
-type = custom/text
-content = "%{B#546076}%{F}    %{B- F-}"
-content-foreground = ${colors.nord3.25}
-
-[module/padding7]
-type = custom/text
-content = "%{B#5C6A82}%{F}  %{B- F-}"
-content-foreground = ${colors.nord3.5}
-
-;----------------------------------------------------------
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-
-pin-workspaces = true
-
-label-mode-background = ${colors.nord13}
-label-mode-foreground = ${colors.nord0}
-label-mode-padding = ${paddings.outer}
-
-label-focused = %icon%
-label-focused-background = ${colors.nord10}
-label-focused-foreground = ${colors.nord6}
-label-focused-padding = ${paddings.outer}
-
-label-unfocused = %icon%
-label-unfocused-background = ${colors.nord0}
-label-unfocused-foreground = ${colors.nord6}
-label-unfocused-padding = ${paddings.outer}
-
-label-visible = %icon%
-label-visible-background = ${colors.nord0}
-label-visible-foreground = ${colors.nord6}
-label-visible-padding = ${paddings.outer}
-
-label-urgent = %icon%
-label-urgent-background = ${colors.nord0}
 label-urgent-foreground = ${colors.nord13}
-label-urgent-padding = ${paddings.outer}
+label-urgent-padding = ${paddings.inner}
 
-;----------------------------------------------------------
+label-empty-foreground = ${colors.nord3}
+label-empty-padding = ${paddings.inner}
+
+;---------------------------------------
+;	POWER MODULE
+;---------------------------------------
 
 [module/power]
 type = custom/menu
 
 format = <label-toggle><menu>
-expand-right = true
 
-format-spacing = 0
-
-label-open = 襤
+label-open = 
 label-open-background = ${colors.nord10}
-label-open-foreground = ${colors.nord6}
-label-open-padding = ${paddings.inner}
+label-open-padding = ${paddings.outer}
 
-label-close = 
+label-close = 
 label-close-background = ${colors.nord10}
-label-close-padding = ${paddings.inner}
+label-close-padding = ${paddings.outer}
 
-menu-0-0 = 
-menu-0-0-exec = gllock
+menu-0-0 =  lock
+menu-0-0-exec = lock.sh
 menu-0-0-background = ${colors.nord10}
 menu-0-0-padding = ${paddings.inner}
 
-menu-0-1 = 省
-menu-0-1-exec = i3-msg exit
+menu-0-1 =  exit
+menu-0-1-exec = bspc quit
 menu-0-1-background = ${colors.nord10}
 menu-0-1-padding = ${paddings.inner}
 
-menu-0-2 = 
+menu-0-2 =  suspend
 menu-0-2-exec = systemctl suspend
 menu-0-2-background = ${colors.nord10}
 menu-0-2-padding = ${paddings.inner}
 
-menu-0-3 = 累
+menu-0-3 =  reboot
 menu-0-3-exec = reboot
 menu-0-3-background = ${colors.nord10}
 menu-0-3-padding = ${paddings.inner}
 
-menu-0-4 = ﮣ
+menu-0-4 =  poweroff
 menu-0-4-exec = poweroff
 menu-0-4-background = ${colors.nord10}
-menu-0-4-padding = ${paddings.inner}
+menu-0-4-padding-left = ${paddings.inner}
+menu-0-4-padding-right = ${paddings.outer}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	BATTERY MODULE
+;---------------------------------------
 
 [module/battery]
-type = custom/script
-exec = ~/.config/polybar/scripts/battery-combined-udev.sh
-tail = true
+type = internal/battery
 
-format-background = ${colors.nord0}
+battery = BAT0
+adapter = AC
 
-;----------------------------------------------------------
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${colors.nord0}
+animation-charging-foreground = ${colors.nord14}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 500
+label-charging = %percentage%%
+label-charging-padding-right = ${paddings.outer}
+
+format-full = <label-full>
+format-full-foreground = ${colors.nord14}
+format-full-background = ${colors.nord0}
+label-full =  %percentage%%
+label-full-padding-left = ${paddings.inner}
+label-full-padding-right = ${paddings.outer}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${colors.nord0}
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.nord11}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.nord12}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.nord13}
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-9-foreground = ${colors.nord14}
+label-discharging = %percentage%%
+label-discharging-padding-right = ${paddings.outer}
+
+;---------------------------------------
+;	UPDATES MODULE
+;---------------------------------------
 
 [module/updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 interval = 600
-format-padding = ${paddings.inner}
-label-padding-left = ${paddings.inner}
-
+format-padding = ${paddings.outer}
 format-background = ${colors.nord0}
 
-;----------------------------------------------------------
-
-[module/gmail]
-type = custom/script
-exec = ~/.config/polybar/scripts/polybar-gmail/launch.py -p  -c ECEFF4 -ns
-tail = true
-click-left = xdg-open https://mail.google.com
-label-padding-left = ${paddings.inner}
-
-format-background = ${colors.nord0}
-
-;----------------------------------------------------------
-
-[module/caffeine]
-type = custom/menu
-
-label-open = 
-label-close = 
-label-open-padding = 0
-label-close-padding = 1
-label-separator = " "
-
-label-open-padding-left = ${paddings.inner}
-label-close-padding-left = ${paddings.inner}
-format-background = ${colors.nord0}
-
-menu-0-0 = 
-menu-0-0-exec = caffeine -a
-menu-0-1 = 
-menu-0-1-exec = caffeine -d
-menu-0-2 = 
-menu-0-2-exec = caffeine kill
-
-;----------------------------------------------------------
+;---------------------------------------
+;	DATE MODULE
+;---------------------------------------
 
 [module/date]
 type = internal/date
@@ -292,11 +235,14 @@ type = internal/date
 interval = 1
 date = "%d/%m/%Y"
 
-label =  %date%
 format-background = ${colors.nord1}
+label = %date%
 label-padding-left = ${paddings.inner}
+label-padding-right = ${paddings.outer}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	TIME MODULE
+;---------------------------------------
 
 [module/time]
 type = internal/date
@@ -304,171 +250,147 @@ type = internal/date
 interval = 1
 time = %H:%M:%S
 
-label =  %time%
 format-background = ${colors.nord1}
-format-padding = ${paddings.inner}
-label-padding-left = ${paddings.inner}
+label = %time%
+label-padding-left = ${paddings.outer}
+label-padding-right = ${paddings.inner}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	ETHERNET MODULE
+;---------------------------------------
 
 [module/eth]
 type = internal/network
 interface = ens20u1u4
 interval = 1
 
-label-connected =  %local_ip%  %downspeed:8%  %upspeed:8%
-label-connected-padding-left = ${paddings.inner}
-label-connected-background = ${colors.nord2}
+format-connected-background = ${colors.nord2}
+format-connected-padding = ${paddings.outer}
+label-connected = %{A1:networkmanager_dmenu:} %local_ip%%{A}   %downspeed:8%   %upspeed:8%
 
-;----------------------------------------------------------
+;---------------------------------------
+;	WI-FI MODULE
+;---------------------------------------
 
 [module/wlan]
 type = internal/network
 interface = wlp59s0
 interval = 1
 
-label-connected = %{A1:networkmanager_dmenu:}直  %signal%%%{A}  %downspeed:8%  %upspeed:8%
-format-connected-padding = ${paddings.inner}
-label-connected-padding-left = ${paddings.inner}
 format-connected-background = ${colors.nord2}
+format-connected-padding = ${paddings.outer}
+label-connected = %{A1:networkmanager_dmenu:} %signal:2%%%{A}   %downspeed:8%   %upspeed:8%
 
-label-disconnected = %{A1:networkmanager_dmenu:}睊%{A}
-format-disconnected-padding = ${paddings.inner}
-label-disconnected-padding-left = ${paddings.inner}
-label-disconnected-foreground = ${colors.nord4}
-format-disconnected-background = ${colors.nord2}
-
-;----------------------------------------------------------
+;---------------------------------------
+;	TEMPERATURE MODULE
+;---------------------------------------
 
 [module/temperature]
 type = internal/temperature
 interval = 0.5
-thermal-zone = 9
-warn-temperature = 80
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+warn-temperature = 70
 
 format = <label>
-label =  %temperature-c%
 format-background = ${colors.nord3}
+label =  %temperature-c:2%
+label-padding-left = ${paddings.inner}
+label-padding-right = ${paddings.outer}
 
 format-warn = <label-warn>
-label-warn =  %temperature-c%
+format-warn-background = ${colors.nord3}
+label-warn =  %temperature-c:2%
 label-warn-foreground = ${colors.nord12}
-label-warn-background = ${colors.nord3}
-
-label-padding-left = ${paddings.inner}
 label-warn-padding-left = ${paddings.inner}
+label-warn-padding-right = ${paddings.outer}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	CPU MODULE
+;---------------------------------------
 
 [module/cpu]
 type = internal/cpu
 interval = 0.5
 
 format = <label>
-label = 龍 %percentage%%
 format-background = ${colors.nord3}
 format-padding = ${paddings.inner}
+label =  %percentage:2%%
 
-;----------------------------------------------------------
+;---------------------------------------
+;	RAM MODULE
+;---------------------------------------
 
 [module/memory]
 type = internal/memory
 interval = 0.5
 
 format = <label>
-label =  %percentage_used%%
 format-background = ${colors.nord3}
-format-padding = ${paddings.inner}
+label =  %percentage_used:2%%
+label-padding-left = ${paddings.outer}
+label-padding-right = ${paddings.inner}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	BACKLIGHT MODULE
+;---------------------------------------
 
 [module/backlight]
 type = internal/backlight
+
+enable-scroll = true
 card = intel_backlight
 
 format = <ramp> <label>
-label = %percentage%%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
+format-background = ${colors.nord3.1}
+ramp-0 = 
+ramp-1 = 
+label = %{A1:~/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
+ramp-padding-left = ${paddings.inner}
+label-padding-right = ${paddings.outer}
 
-format-background = ${colors.nord3.25}
-
-;----------------------------------------------------------
-
-[module/alsa]
-type = internal/alsa
-
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-
-master-mixer = Master
-speaker-mixer = Speaker
-headphone-mixer = Headphone
-
-headphone-id = 21
-
-mapped = true
-
-label-muted = ﱝ
-label-muted-foreground = ${colors.nord4}
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-
-ramp-headphones-0 = 
-
-format-volume-background = ${colors.nord3.5}
-format-volume-padding = ${paddings.outer}
-label-muted-background = ${colors.nord3.5}
-label-muted-padding = ${paddings.outer}
-
-;----------------------------------------------------------
+;---------------------------------------
+;	PULSEAUDIO MODULE
+;---------------------------------------
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
+interval = 5
 sink = alsa_output.pci-0000_00_1f.3.analog-stereo
-
 use-ui-max = true
 
-interval = 5
-
-label-muted = ﱝ
-label-muted-foreground = ${colors.nord4}
+label-muted = 
+label-muted-background = ${colors.nord3.1}
+label-muted-padding-left = ${paddings.outer}
+label-muted-padding-right = ${paddings.inner}
 
 format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.nord3.1}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-padding-left = ${paddings.outer}
 label-volume = %percentage%%
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+label-volume-padding-right = ${paddings.inner}
 
-ramp-headphones-0 = 
-
-format-volume-background = ${colors.nord3.25}
-label-muted-background = ${colors.nord3.25}
-
-;----------------------------------------------------------
+;---------------------------------------
+;	PLAYER MPRIS MODULE
+;---------------------------------------
 
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
+exec = ~/.config/polybar/scripts/player-mpris-tail.py --icon-playing  --icon-paused  --icon-stopped 
 tail = true
 click-middle = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
 click-left = ~/.config/polybar/scripts/player-mpris-tail.py next &
 click-right = ~/.config/polybar/scripts/player-mpris-tail.py previous &
 
-format-background = ${colors.nord3.5}
+format-background = ${colors.nord3.2}
+format-padding = ${paddings.outer}
 
-;----------------------------------------------------------
+;---------------------------------------
+;	SETTINGS
+;---------------------------------------
 
 [settings]
 screenchange-reload = true

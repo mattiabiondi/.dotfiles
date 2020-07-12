@@ -7,5 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar main &
-polybar external &
+if [ "$(bspc query -M | wc -l)" -eq 2 ]; then
+  polybar -r docked &
+else
+  polybar -r mobile &
+fi
