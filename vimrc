@@ -39,27 +39,15 @@ let g:lightline = {
 \	'colorscheme': 'nord',
 \	'active': {
 \		'left': [ [ 'mode', 'paste' ],
-\				[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-\	},
-\	'component': {
-\		'lineinfo': ' %3l:%-2v',
-\		'readonly': '%{&readonly?"":""}',
-\	},
+\				[ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+\   'right': [ [ 'lineinfo' ],
+\              [ 'percent' ],
+\              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+\ },
 \	'component_function': {
-\   	'gitbranch': 'Fugitive',
+\   	'gitbranch': 'FugitiveHead',
 \	},
-\	'separator': {
-\		'left': '', 'right': ''
-\	},
-\	'subseparator': {
-\		'left': '', 'right': ''
-\	}
 \}
-
-function! Fugitive()
-	let _ = fugitive#head()
-	return strlen(_) ? ' '._ : ''
-endfunction
 
 colorscheme nord
 syntax on
