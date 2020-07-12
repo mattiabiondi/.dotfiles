@@ -10,10 +10,8 @@ fi
 
 updates=$(("$updates_arch" + "$updates_aur"))
 
-RED='\033[0;31m'
-
 if [ "$updates" -gt 0 ]; then
-    echo "罹 $updates"
+    echo " $updates"
 else
-    echo "裏 $updates"
+    echo " $updates"
 fi
