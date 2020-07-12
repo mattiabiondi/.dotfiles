@@ -1,4 +1,3 @@
-Xft.dpi:       144
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
@@ -28,11 +27,6 @@ Xft.lcdfilter: lcddefault
 *.cursorColor:  nord4
 *fading: 35
 *fadeColor: nord3
-
-XTerm*font:	JetBrainsMono Nerd Font
-XTerm*faceName: JetBrainsMono Nerd Font
-XTerm*faceSize: 9
-XTerm*selectToClipboard: true
 
 *.color0: nord1
 *.color1: nord11
