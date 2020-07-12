@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-center '/home/mattia/pictures/background.png'
+feh --no-fehbg --bg-center '/home/mattia/pictures/wallpapers/homescreen.png'
