@@ -75,3 +75,9 @@ unclutter --ignore-scrolling &
 
 # Call the compositor
 picom &
+
+# Disable USB auto-suspend for mouse and keyboard
+sudo powertop-fix.sh
+
+# Lock the screen
+lock.sh
