@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-center '/home/mattia/pictures/wallpapers/homescreen.png'
+feh --no-fehbg --bg-fill '/home/mattia/pictures/wallpapers/foggy.jpg'
