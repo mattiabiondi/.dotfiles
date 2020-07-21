@@ -2,7 +2,7 @@
 
 notify-send "DUNST_COMMAND_PAUSE"
 
-if [ "$(bspc query -M | wc -l)" -eq 2 ]; then
+if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
   indpos="2475:1355"
   timepos="25:1335"
   datepos="25:1405"

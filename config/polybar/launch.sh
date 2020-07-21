@@ -7,7 +7,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-if [ "$(bspc query -M | wc -l)" -eq 2 ]; then
+if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
   polybar -r docked &
 else
   polybar -r mobile &
