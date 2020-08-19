@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=`date +%y-%m-%d`
+DATE=`date +%Y-%m-%d`
 
 if [ ! -d ${HOME}/.trash/$DATE ]; then
   mkdir -p ${HOME}/.trash/$DATE
