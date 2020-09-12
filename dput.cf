@@ -1,0 +1,6 @@
+[virtualsquare-umps]
+fqdn = ppa.launchpad.net
+method = ftp
+incoming = ~virtualsquare/ubuntu/umps/
+login = anonymous
+allow_unsigned_uploads = 0
