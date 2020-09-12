@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo "Xft.dpi: 144" | xrdb -merge
-bspc monitor DP3 -d " I" II III IV V VI VII VIII  
+bspc monitor DP3 -d I II III IV V VI VII VIII IX X
 ~/.config/polybar/launch.sh
 ~/.fehbg &

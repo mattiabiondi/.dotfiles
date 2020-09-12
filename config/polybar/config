@@ -191,7 +191,6 @@ ws-icon-6 = VII;󰎶
 ws-icon-7 = VIII;󰍳
 ws-icon-8 = IX;󰊌
 ws-icon-9 = X;󰎇
-ws-icon-default = 
 
 label-focused = %icon%
 label-focused-background = ${colors.nord10}
