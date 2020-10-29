@@ -66,7 +66,7 @@ font-5 = JetBrains Mono:size=17;6
 
 modules-left = bspwm
 modules-center =
-modules-right = arrow7 player-mpris-tail arrow6 pulseaudio backlight arrow5 memory cpu temperature arrow4 wlan eth arrow3 time date arrow2 updates battery arrow1 power
+modules-right = arrow7 player-mpris-tail arrow6 pulseaudio backlight arrow5 memory cpu temperature arrow4 wlan eth padding4 arrow3 time date arrow2 updates battery arrow1 power
 
 ;---------------------------------------
 
@@ -107,7 +107,7 @@ font-5 = JetBrains Mono:size=17;6
 
 modules-left = bspwm
 modules-center =
-modules-right = arrow7 player-mpris-tail arrow6 pulseaudio padding6 arrow5 memory cpu temperature arrow4 wlan eth arrow3 time date arrow2 updates battery arrow1 power
+modules-right = arrow7 player-mpris-tail arrow6 pulseaudio padding6 arrow5 memory cpu temperature arrow4 wlan eth padding4 arrow3 time date arrow2 updates battery arrow1 power
 
 ;---------------------------------------
 
@@ -166,6 +166,12 @@ content = "%{T6}%{T-}"
 content-font = 6
 content-foreground = ${colors.nord3.2}
 
+[module/padding4]
+type = custom/text
+content = " "
+content-background = ${colors.nord2}
+content-foreground = ${colors.nord2}
+
 [module/padding6]
 type = custom/text
 content = " "
@@ -187,7 +193,7 @@ ws-icon-2 = III;󰎪
 ws-icon-3 = IV;󰎭
 ws-icon-4 = V;󰎱
 ws-icon-5 = VI;󰎳
-ws-icon-6 = VII;󰎶
+ws-icon-6 = VII;󰑴
 ws-icon-7 = VIII;󰍳
 ws-icon-8 = IX;󰊌
 ws-icon-9 = X;󰎇
@@ -353,7 +359,7 @@ interface = ens20u1u4
 interval = 1
 
 format-connected-background = ${colors.nord2}
-format-connected-padding = ${paddings.outer}
+format-connected-padding = ${paddings.inner}
 label-connected = %{A1:networkmanager_dmenu:}󰈀   %downspeed:8%   %upspeed:8%%{A}
 
 ;---------------------------------------
@@ -367,16 +373,18 @@ interval = 1
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-background = ${colors.nord2}
-format-connected-padding = ${paddings.outer}
 ramp-signal-0 = 󰤯
 ramp-signal-1 = 󰤟
 ramp-signal-2 = 󰤢
 ramp-signal-3 = 󰤥
 ramp-signal-4 = 󰤨
+ramp-signal-padding-left = ${paddings.outer}
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.nord2}
 
 format-packetloss = <animation-packetloss> <label-connected>
 format-packetloss-background = ${colors.nord2}
-format-packetloss-padding = ${paddings.outer}
 animation-packetloss-0 = 󰤫
 animation-packetloss-0-foreground = ${colors.nord13}
 animation-packetloss-1 = 󰤠
@@ -390,6 +398,10 @@ animation-packetloss-4-foreground = ${colors.nord13}
 animation-packetloss-framerate = 500
 
 label-connected = %{A1:networkmanager_dmenu:}%signal%%   %downspeed:8%   %upspeed:8%%{A}
+label-connected-padding-right = ${paddings.inner}
+label-disconnected = %{A1:networkmanager_dmenu:}󰤭%{A}
+label-disconnected-padding-left = ${paddings.outer}
+label-disconnected-padding-right = ${paddings.inner}
 
 ;---------------------------------------
 ;	TEMPERATURE MODULE
