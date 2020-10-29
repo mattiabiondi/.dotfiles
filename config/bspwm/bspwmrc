@@ -49,6 +49,7 @@ bspc config presel_feedback_color	"#ebcb8b"
 
 # Rules
 bspc rule -a Zathura state=tiled
+bspc rule -a Pavucontrol state=floating
 
 # Launch sxhkd
 sxhkd &
