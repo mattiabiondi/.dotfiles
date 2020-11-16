@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun";
+	font: "JetBrains Mono 10";
+	terminal: "alacritty";
+	dpi: 192;
+	theme: "~/.config/rofi/nord.rasi";
+	display-drun: "";
+}

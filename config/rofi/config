@@ -1,6 +1,0 @@
-rofi.theme: ~/.config/rofi/nord.rasi
-rofi.modi: drun
-rofi.dpi: 192
-rofi.font: JetBrains Mono 10
-rofi.display-drun: 
-rofi.terminal: alacritty
