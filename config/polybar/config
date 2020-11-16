@@ -64,7 +64,7 @@ font-5 = JetBrains Mono:size=17;6
 
 ;---------------------------------------
 
-modules-left = bspwm
+modules-left = bspwm-mobile
 modules-center =
 modules-right = arrow7 player-mpris-tail arrow6 pulseaudio backlight arrow5 memory cpu temperature arrow4 wlan eth padding4 arrow3 time date arrow2 updates battery arrow1 power
 
@@ -105,7 +105,7 @@ font-5 = JetBrains Mono:size=17;6
 
 ;---------------------------------------
 
-modules-left = bspwm
+modules-left = bspwm-docked
 modules-center =
 modules-right = arrow7 player-mpris-tail arrow6 pulseaudio padding6 arrow5 memory cpu temperature arrow4 wlan eth padding4 arrow3 time date arrow2 updates battery arrow1 power
 
@@ -179,10 +179,45 @@ content-background = ${colors.nord3.1}
 content-foreground = ${colors.nord3.1}
 
 ;---------------------------------------
-;	BSPWM MODULE
+;	BSPWM MOBILE MODULE
 ;---------------------------------------
 
-[module/bspwm]
+[module/bspwm-mobile]
+type = internal/bspwm
+
+format = <label-state>
+
+ws-icon-0 = I;󰎤
+ws-icon-1 = II;󰎧
+ws-icon-2 = III;󰎪
+ws-icon-3 = IV;󰎭
+ws-icon-4 = V;󰎱
+ws-icon-5 = VI;󰎳
+ws-icon-6 = VII;󰑴
+ws-icon-7 = VIII;󰍳
+ws-icon-8 = IX;󰊌
+ws-icon-9 = X;󰎇
+
+label-focused = %icon%
+label-focused-background = ${colors.nord10}
+label-focused-padding = ${paddings.outer}
+
+label-occupied = %icon%
+label-occupied-background = ${colors.nord0}
+label-occupied-padding = ${paddings.outer}
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.nord13}
+label-urgent-background = ${colors.nord0}
+label-urgent-padding = ${paddings.outer}
+
+label-empty =
+
+;---------------------------------------
+;	BSPWM DOCKED MODULE
+;---------------------------------------
+
+[module/bspwm-docked]
 type = internal/bspwm
 
 format = <label-state>
