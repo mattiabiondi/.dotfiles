@@ -472,7 +472,7 @@ ramp-3 = 󰃝
 ramp-4 = 󰃞
 ramp-5 = 󰃟
 ramp-6 = 󰃠
-label = %{A1:~/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
+label = %{A1:toggle-redshift.sh:}%percentage%%%{A}
 ramp-padding-left = ${paddings.inner}
 label-padding-right = ${paddings.outer}
 
