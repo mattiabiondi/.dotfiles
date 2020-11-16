@@ -26,7 +26,7 @@ set selection-notification	"true"
 set inputbar-fg			"#eceff4"
 set inputbar-bg 		"#3b4252"
 
-set recolor			"true"
+set recolor			"false"
 set recolor-lightcolor		"#2e3440"
 set recolor-darkcolor		"#d8dee9"
 
