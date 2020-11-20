@@ -3,9 +3,9 @@
 notify-send "DUNST_COMMAND_PAUSE"
 
 if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
-  indpos="2475:1355"
-  timepos="25:1335"
-  datepos="25:1405"
+  indpos="3755:1355"
+  timepos="1305:1335"
+  datepos="1305:1405"
 else
   indpos="1835:995"
   timepos="25:975"

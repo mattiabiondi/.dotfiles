@@ -2,17 +2,19 @@
 
 # Determine XrandR settings
 if [[ "$(xrandr | grep -c -w 'DP1 connected\|DP3 connected')" -eq 2 ]]; then
-  # Docked mode
+  # Docked mode (3)
   echo "Xft.dpi: 144" | xrdb -merge
-  xrandr --output eDP1 --off \
-    --output DP3 --primary --mode 3840x2160 --pos 0x0 \
-    --output DP1 --mode 1600x1200 --pos 3840x0
+  xrandr \
+    --output DP1 --mode 1600x1200 --pos 320x0 \
+    --output DP3 --primary --mode 3840x2160 --pos 1920x0 \
+    --output eDP1 --mode 1920x1080 --pos 0x1200
 else
   # Mobile mode
-  xrandr --output eDP1 --primary --mode 3840x2160 --pos 0x0 \
-    --output DP3 --off \
-    --output DP1 --off
   echo "Xft.dpi: 192" | xrdb -merge
+  xrandr \
+    --output DP1 --off \
+    --output DP3 --off \
+    --output eDP1 --primary --mode 3840x2160 --pos 0x0
 fi
 
 bspc config remove_disabled_monitors true
@@ -20,8 +22,10 @@ bspc config remove_unplugged_monitors true
 
 # Define desktop[s] [per monitor]
 if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
-  bspc monitor DP3 -d I II III IV V VI VII VIII
-  bspc monitor DP1 -d IX X
+  bspc monitor DP3 -d I II III IV V VI
+  bspc monitor DP1 -d VII VIII
+  bspc monitor eDP1 -d IX X
+  bspc wm -O DP3 DP1 eDP1
 else
   bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
 fi

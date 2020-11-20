@@ -8,7 +8,6 @@ output DP1
 off
 output DP3
 crtc 0
-gamma 0.769:0.769:0.769
 mode 3840x2160
 pos 0x0
 primary
