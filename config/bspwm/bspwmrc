@@ -2,12 +2,12 @@
 
 # Determine XrandR settings
 if [[ "$(xrandr | grep -c -w 'DP1 connected\|DP3 connected')" -eq 2 ]]; then
-  # Docked mode (3)
+  # Docked mode (duo)
   echo "Xft.dpi: 144" | xrdb -merge
   xrandr \
-    --output DP1 --mode 1600x1200 --pos 320x0 \
-    --output DP3 --primary --mode 3840x2160 --pos 1920x0 \
-    --output eDP1 --mode 1920x1080 --pos 0x1200
+    --output DP1 --mode 1600x1200 --pos 0x480 \
+    --output DP3 --primary --mode 3840x2160 --pos 1600x0 \
+    --output eDP1 --off
 else
   # Mobile mode
   echo "Xft.dpi: 192" | xrdb -merge
@@ -42,8 +42,8 @@ bspc config click_to_focus	 	button1
 bspc config focus_follows_pointer 	true
 
 # Monocle mode settings
-bspc config borderless_monocle   false
-bspc config gapless_monocle      true
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
 
 # Colors
 bspc config normal_border_color		"#4c566a"
