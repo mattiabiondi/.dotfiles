@@ -7,8 +7,8 @@ nord0 = #2E3440
 nord1 = #3B4252
 nord2 = #434C5E
 nord3 = #4C566A
-nord3.1 = #546076
-nord3.2 = #5C6A82
+nord3-1 = #546076
+nord3-2 = #5C6A82
 nord4 = #D8DEE9
 nord5 = #E5E9F0
 nord6 = #ECEFF4
@@ -150,21 +150,21 @@ content-foreground = ${colors.nord2}
 type = custom/text
 content = "%{T6}%{T-}"
 content-font = 6
-content-background = ${colors.nord3.1}
+content-background = ${colors.nord3-1}
 content-foreground = ${colors.nord3}
 
 [module/arrow6]
 type = custom/text
 content = "%{T6}%{T-}"
 content-font = 6
-content-background = ${colors.nord3.2}
-content-foreground = ${colors.nord3.1}
+content-background = ${colors.nord3-2}
+content-foreground = ${colors.nord3-1}
 
 [module/arrow7]
 type = custom/text
 content = "%{T6}%{T-}"
 content-font = 6
-content-foreground = ${colors.nord3.2}
+content-foreground = ${colors.nord3-2}
 
 [module/padding4]
 type = custom/text
@@ -175,8 +175,8 @@ content-foreground = ${colors.nord2}
 [module/padding6]
 type = custom/text
 content = " "
-content-background = ${colors.nord3.1}
-content-foreground = ${colors.nord3.1}
+content-background = ${colors.nord3-1}
+content-foreground = ${colors.nord3-1}
 
 ;---------------------------------------
 ;	BSPWM MOBILE MODULE
@@ -390,7 +390,7 @@ label-padding-right = ${paddings.inner}
 
 [module/eth]
 type = internal/network
-interface = ens20u1u4
+interface = enp58s0u1u4
 interval = 1
 
 format-connected-background = ${colors.nord2}
@@ -445,7 +445,7 @@ label-disconnected-padding-right = ${paddings.inner}
 [module/temperature]
 type = internal/temperature
 interval = 0.5
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input
 warn-temperature = 70
 
 format = <label>
@@ -499,7 +499,7 @@ enable-scroll = true
 card = intel_backlight
 
 format = <ramp> <label>
-format-background = ${colors.nord3.1}
+format-background = ${colors.nord3-1}
 ramp-0 = 󰃚
 ramp-1 = 󰃛
 ramp-2 = 󰃜
@@ -522,12 +522,12 @@ sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = true
 
 label-muted = 󰝟
-label-muted-background = ${colors.nord3.1}
+label-muted-background = ${colors.nord3-1}
 label-muted-padding-left = ${paddings.outer}
 label-muted-padding-right = ${paddings.inner}
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.nord3.1}
+format-volume-background = ${colors.nord3-1}
 ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
@@ -547,7 +547,7 @@ click-middle = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
 click-left = ~/.config/polybar/scripts/player-mpris-tail.py next &
 click-right = ~/.config/polybar/scripts/player-mpris-tail.py previous &
 
-format-background = ${colors.nord3.2}
+format-background = ${colors.nord3-2}
 format-padding = ${paddings.outer}
 
 ;---------------------------------------
