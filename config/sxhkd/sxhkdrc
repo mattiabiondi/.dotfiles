@@ -34,10 +34,10 @@ super + Escape
 
 # volume
 XF86Audio{Raise,Lower}Volume
-	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+,-}5%"
+	sh -c "pactl set-sink-mute 1 false ; pactl set-sink-volume 1 {+,-}5%"
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute 1 toggle
 
 # screen brightness
 XF86MonBrightness{Down,Up}
