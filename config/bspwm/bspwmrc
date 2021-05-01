@@ -22,10 +22,9 @@ bspc config remove_unplugged_monitors true
 
 # Define desktop[s] [per monitor]
 if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
-  bspc monitor DP3 -d I II III IV V VI
-  bspc monitor DP1 -d VII VIII
-  bspc monitor eDP1 -d IX X
-  bspc wm -O DP3 DP1 eDP1
+  bspc monitor DP3 -d I II III IV V VI VII VIII
+  bspc monitor DP1 -d IX X
+  bspc wm -O DP3 DP1
 else
   bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
 fi
