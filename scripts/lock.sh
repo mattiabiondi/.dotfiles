@@ -1,6 +1,6 @@
 #!/bin/sh
 
-notify-send "DUNST_COMMAND_PAUSE"
+dunstctl set-paused true
 
 if [ "$(xrdb -query | awk '/dpi/ {print $2}')" -eq 144 ]; then
   indpos="3755:1355"
@@ -50,4 +50,4 @@ i3lock --nofork --ignore-empty-password		\
     --indicator					\
     --color=21262e
 
-notify-send "DUNST_COMMAND_RESUME"
+dunstctl set-paused false
