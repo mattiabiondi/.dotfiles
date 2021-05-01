@@ -14,6 +14,8 @@ alias df='df -h'
 alias diff='diff --color=auto'
 alias free='free -m'
 alias ip='ip -color=auto'
+alias ssh='TERM=xterm-color ssh'
+alias uncrustify-all='find . \( -name "*.cpp" -o -name "*.c" -o -name "*.h" \) -exec uncrustify -c /usr/share/uncrustify/linux.cfg --no-backup {} +'
 
 shopt -s autocd
 umask 77
