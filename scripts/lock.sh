@@ -13,39 +13,39 @@ else
 fi
 
 i3lock --nofork --ignore-empty-password		\
-    --linecolor=00000000        		\
-    --keyhlcolor=eceff4ff       		\
-    --bshlcolor=bf616aff			\
-    --separatorcolor=00000000   		\
+    --line-color=00000000        		\
+    --keyhl-color=eceff4ff       		\
+    --bshl-color=bf616aff			\
+    --separator-color=00000000   		\
     --radius=50					\
     --ring-width=15				\
-    --indpos=$indpos				\
+    --ind-pos=$indpos				\
     \
-    --insidevercolor=00000000			\
-    --insidewrongcolor=00000000 		\
-    --insidecolor=00000000			\
+    --insidever-color=00000000			\
+    --insidewrong-color=00000000 		\
+    --inside-color=00000000			\
     \
-    --ringcolor=88c0d0ff        		\
-    --ringvercolor=a3be8cff     		\
-    --ringwrongcolor=bf616aff   		\
+    --ring-color=88c0d0ff        		\
+    --ringver-color=a3be8cff     		\
+    --ringwrong-color=bf616aff   		\
     \
     --clock					\
-    --timecolor=eceff4ff			\
-    --timestr="%H:%M:%S"			\
+    --time-color=eceff4ff			\
+    --time-str="%H:%M:%S"			\
     --time-font='JetBrains Mono'		\
-    --timesize=100				\
+    --time-size=100				\
     --time-align=1				\
-    --timepos=$timepos				\
+    --time-pos=$timepos				\
     \
-    --datecolor=d8dee9ff			\
-    --datestr="%A, %d %B"			\
+    --date-color=d8dee9ff			\
+    --date-str="%A, %d %B"			\
     --date-font='JetBrains Mono'		\
-    --datesize=50				\
-    --datepos=$datepos				\
+    --date-size=50				\
+    --date-pos=$datepos				\
     --date-align=1				\
     \
-    --veriftext=""				\
-    --wrongtext=""				\
+    --verif-text=""				\
+    --wrong-text=""				\
     \
     --indicator					\
     --color=21262e
