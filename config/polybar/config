@@ -445,7 +445,7 @@ label-disconnected-padding-right = ${paddings.inner}
 [module/temperature]
 type = internal/temperature
 interval = 0.5
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
 warn-temperature = 70
 
 format = <label>
